@@ -44,10 +44,10 @@
       <!--header start-->
       <header class="header black-bg">
         <div class="sidebar-toggle-box">
-          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu desplegable"></div>
         </div>
         <!--logo start-->
-        <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+        <a href="index.html" class="logo"><b>VisualDeer</b></a>
         <!--logo end-->
         <div class="nav notify-row" id="top_menu">
           <!--  notification start -->
@@ -205,18 +205,20 @@
         <div id="sidebar"  class="nav-collapse ">
           <!-- sidebar menu start-->
           <ul class="sidebar-menu" id="nav-accordion">
-            <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Marcel Newman</h5>
+            <p class="centered"><a href="profile.html"><img src="assets/img/ui-sherman.jpg" class="img-circle" width="60"></a></p>
+            <h5 class="centered">Hector Gonzalez</h5>
+            <p class="centered">Encargado</p>
             <li class="mt">
-              <a class="active" href="index.html">
+              <a class="active" href="" ui-sref="home">
                 <i class="fa fa-dashboard"></i>
-                <span>Dashboard</span>
+                <span>INICIO</span>
               </a>
             </li>
+
             <li class="sub-menu">
               <a href="javascript:;" >
-                <i class="fa fa-desktop"></i>
-                <span>UI Elements</span>
+                <i class="fa fa-list-alt"></i>
+                <span>INVENTARIO</span>
               </a>
               <ul class="sub">
                 <li><a href="#" ui-sref="general">General</a></li>
@@ -294,7 +296,7 @@
     <!--footer start-->
     <footer class="site-footer">
       <div class="text-center">
-        2014 - Alvarez.is
+        2018 - Hector Gonzalez
         <a href="index.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
         </a>
@@ -319,6 +321,7 @@
   <script type="text/javascript" src="app/chartjs/chartjs.controller.js"></script>
   <script type="text/javascript" src="app/form_component/form_component.controller.js"></script>
   <script type="text/javascript" src="app/gallery/gallery.controller.js"></script>
+  <script type="text/javascript" src="app/login/LoginCtrl.js"></script>
   <script type="text/javascript" src="app/general/general.controller.js"></script>
   <script type="text/javascript" src="app/morris/morris.controller.js"></script>
   <script type="text/javascript" src="app/panels/panels.controller.js"></script>
@@ -352,9 +355,9 @@
     $(document).ready(function () {
       var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
-        title: 'Welcome to Dashgum!',
+        title: 'Bienvenido',
         // (string | mandatory) the text inside the notification
-        text: 'Hover me to enable the Close Button. You can hide the left sidebar clicking on the button next to the logo. Free version for <a href="http://blacktie.co" target="_blank" style="color:#ffd777">BlackTie.co</a>.',
+        text: '<center>Sistema de control para equipos audiovisuales</center><hr> <b>Fecha de ingreso:</b> '+Date()+'',
         // (string | optional) the image to display on the left
         image: 'assets/img/ui-sam.jpg',
         // (bool | optional) if you want it to fade out on its own or just sit there

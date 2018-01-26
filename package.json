@@ -1,7 +1,7 @@
 {
-  "name": "user-profile",
+  "name": "Tesis",
   "version": "0.0.0",
-  "description": "Implement a custom login form with Auth0",
+  "description": "Tesis de inventario manejada con dispositivo RFID",
   "main": "index.js",
   "scripts": {
     "start": "node server.js"
@@ -13,5 +13,8 @@
     "angular": "^1.6.1",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
   }
 }

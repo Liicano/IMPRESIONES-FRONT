@@ -9,8 +9,8 @@ app.get('/*', function(req, res) {
 });
 
 const hostname = 'localhost';
-const port = 3000;
+const port = 3000;//hj
 
 const server = app.listen(port, hostname, function() {
-  console.log(`Server running at http://${hostname}:${port}/`);
+  console.log(`Servidor escuchando en el puerto http://${hostname}:${port}/`);
 });
