@@ -1,0 +1,142 @@
+<section class="wrapper">
+    <div class="row mt">
+<!--REGISTRO-->
+<div class="col-lg-6 col-md-6 col-sm-12">
+<div class="showback">
+<h4 class="text-warning">Registro</h4>
+<hr class="divider">
+
+<form class="form-group">
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+    <input id="email" type="text" class="form-control" name="email" placeholder="Codigo">
+  </div>
+<hr class="divider">
+
+<div class="form-group">
+  <label for="usr">Nombre</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group"> 
+  <label for="pwd">Descripcion</label>
+  <textarea type="text" class="form-control" id="pwd"></textarea>
+</div>
+<div class="row">
+    <div class="col-md-6">
+<div class="form-group">
+  <label for="usr">Serial 1</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+        <label for="usr">Serial 2</label>
+         <input type="text" class="form-control" id="usr">
+</div>
+    </div>
+</div>
+ <div class="form-group">
+  <label for="usr">Modelo</label>
+  <input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label for="usr">Fecha de compra</label>
+  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}'>
+</div>
+
+<button class="btn btn-sm btn-success btn-block">Guardar Equipo</button>
+
+
+</form>
+
+</div>
+</div>
+
+<!--UBICACION-->
+<div class="col-lg-6 col-md-6 col-sm-12">
+<div class="showback">
+<button class="btn btn-sm btn-primary pull-right" ng-click="valoresDefecto()">Ubicacion por defecto</button>
+<h4 class="text-warning">Ubicacion</h4>
+
+<hr class="divider">
+
+
+<div class="form-group">
+  <label for="usr">Pais</label>
+  <input type="text" class="form-control" id="" {{attr}}  value='{{pais}}'>
+</div>
+
+<div class="form-group">
+  <label for="usr">Estado</label>
+  <input type="text" class="form-control" id="" {{attr}} value='{{estado}}'>
+</div>
+
+<div class="form-group">
+  <label for="usr">Avenida</label>
+  <input type="text" class="form-control" id="" {{attr}} value='{{avenida}}'>
+</div>
+
+<div class="form-group">
+  <label for="usr">Calle</label>
+  <input type="text" class="form-control" id="" {{attr}} value='{{calle}}'>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+  <div class="form-group">
+  <label for="usr">Codigo postal</label>
+  <input type="text" class="form-control" id="" {{attr}} value='{{codigopostal}}'>
+</div>
+    </div>
+    <div class="col-md-6">
+     <div class="form-group">
+        <label for="usr">Punto de referencia</label>
+        <textarea name="" id="" cols="30" rows="5" class="form-control" {{attr}}="true" value='{{puntoreferencia}}'></textarea>
+        </div>
+    </div>
+</div>
+
+<hr class="divider">
+
+
+
+
+</div>
+</div>
+
+    </div>
+</section>
+
+
+
+
+<!--
+  
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> Modal Example</h4>
+               
+                <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                    Launch Modal
+                </button>
+
+               
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                Hi there, I am a Modal Example for Dashgum Admin Panel.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
+

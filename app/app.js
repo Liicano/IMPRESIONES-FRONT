@@ -36,45 +36,40 @@
         controller: 'LoginCtrl',
         templateUrl: 'app/login/login.html',
       })
-      .state('basic_table', {
-        url: '/basic_table',
-        controller: 'BasicTableController',
-        templateUrl: 'app/basic_table/basic_table.html'
+      .state('administrar_equipos', {
+        url: '/administrar_equipos',
+        controller: 'administrar_equipos',
+        templateUrl: 'app/administrar_equipos/administrar_equipos.html'
       })
-      .state('blank', {
-        url: '/blank',
-        controller: 'BlankController',
-        templateUrl: 'app/blank/blank.html'
+      .state('nuevo_encargado', {
+        url: '/nuevo_encargado',
+        controller: 'nuevo_encargado',
+        templateUrl: 'app/nuevo_encargado/nuevo_encargado.html'
       })
       .state('buttons', {
         url: '/buttons',
         controller: 'ButtonsController',
         templateUrl: 'app/buttons/buttons.html'
       })
-      .state('calendar', {
-        url: '/calendar',
-        controller: 'CalendarController',
-        templateUrl: 'app/calendar/calendar.html'
-      })
       .state('chartjs', {
         url: '/chartjs',
         controller: 'ChartjsController',
         templateUrl: 'app/chartjs/chartjs.html'
       })
-      .state('form_component', {
-        url: '/form_component',
-        controller: 'FormComponentController',
-        templateUrl: 'app/form_component/form_component.html'
+      .state('administrar_encargado', {
+        url: '/administrar_encargado',
+        controller: 'administrar_encargado',
+        templateUrl: 'app/administrar_encargado/administrar_encargado.html'
       })
-      .state('gallery', {
-        url: '/gallery',
-        controller: 'GalleryController',
-        templateUrl: 'app/gallery/gallery.html'
+      .state('administrar_operadores', {
+        url: '/administrar_operadores',
+        controller: 'administrar_operadores',
+        templateUrl: 'app/administrar_operadores/administrar_operadores.html'
       })
-      .state('general', {
-        url: '/general',
-        controller: 'GeneralController',
-        templateUrl: 'app/general/general.html'
+      .state('nuevoEquipo', {
+        url: '/nuevoEquipo',
+        controller: 'nuevoEquipo',
+        templateUrl: 'app/nuevoEquipo/nuevoEquipo.html'
       })
       .state('morris', {
         url: '/morris',
@@ -91,10 +86,10 @@
         controller: 'ResponsiveTableController',
         templateUrl: 'app/responsive_table/responsive_table.html'
       })
-      .state('todo_list', {
-        url: '/todo_list',
-        controller: 'TodoListController',
-        templateUrl: 'app/todo_list/todo_list.html'
+      .state('nuevoOperador', {
+        url: '/nuevoOperador',
+        controller: 'nuevoOperador',
+        templateUrl: 'app/nuevoOperador/nuevoOperador.html'
       })
       .state('profile', {
         url: '/profile',

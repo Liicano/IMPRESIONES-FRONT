@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Template</title>
+    <title>VisualDeer</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -23,12 +23,9 @@
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
     <script src="assets/js/chart-master/Chart.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+   
+  
+   
 
   </head>
 
@@ -67,25 +64,27 @@
                   <p class="green">Mis datos</p>
                 </li>
                 <li>
-                  <p><span class="fa fa-user"></span> <b>Hector Gonzalez</b>  -  <span class="label label-warning">Encargado</span></p>
+                  <p><span class="fa fa-user"></span> <b>Rumer Tovar</b>  -  <span class="label label-warning">ADMINISTRADOR</span></p>
                 </li>
                  <li>
                   <p><span class="fa fa-phone"></span> <b>  0412-1701402</b></p>
                 </li>
                 <li>
-                  <p><span class="fa fa-envelope"></span> <b>hlgonzalez@urbe.edu.ve</b></p>
+                  <p><span class="fa fa-envelope"></span> <b>rumertovar@urbe.edu.ve</b></p>
                 </li>
                  <li>
                   <hr class="divider">
                 </li>
                   <li>
-                  <div class="row">
-                    <div class="col-md-6 offset-1">
-                      <button class="btn btn-primary btn-sm btn-block">Editar</button>
-                    </div>
+                  <div class="container-fluid">
+                    <div class="row">
                     <div class="col-md-6 offset-1">
                       <button class="btn btn-danger btn-sm btn-block">Cerrar sesion</button>
                     </div>
+                     <div class="col-md-6 offset-1">
+                      <button class="btn btn-primary btn-sm btn-block">Editar</button>
+                    </div>
+                  </div>
                   </div>
                   <hr class="divider">
                 </li>
@@ -110,8 +109,8 @@
           <!-- sidebar menu start-->
           <ul class="sidebar-menu" id="nav-accordion">
             <p class="centered"><a href="profile.html"><img src="assets/img/ui-sherman.jpg" class="img-circle" width="60"></a></p>
-            <h5 class="centered">Hector Gonzalez</h5>
-            <p class="centered">Encargado</p>
+            <h5 class="centered">Rumer Tovar</h5>
+            <p class="centered">ADMINISTRADOR</p>
             <li class="mt">
               <a class="" href="" ui-sref="home">
                 <i class="fa fa-dashboard"></i>
@@ -129,8 +128,8 @@
                 <span>INVENTARIO</span>
               </a>
               <ul class="sub">
-                <li><a href="#" ui-sref="general">AGREGAR EQUIPO</a></li>
-                <li><a href="#" ui-sref="buttons">ADMINISTRAR</a></li>
+                <li><a href="#" ui-sref="nuevoEquipo">NUEVO EQUIPO</a></li>
+                <li><a href="#" ui-sref="administrar_equipos">ADMINISTRAR</a></li>
               </ul>
             </li>
 
@@ -157,19 +156,18 @@
                 <span>OPERADORES</span>
               </a>
               <ul class="sub">
-                <li><a href="#" ui-sref="calendar">AGREGAR OPERADOR</a></li>
-                <li><a href="#" ui-sref="gallery">ADMINISTRAR</a></li>
+                <li><a href="#" ui-sref="nuevoOperador">NUEVO OPERADOR</a></li>
+                <li><a href="#" ui-sref="administrar_operadores">ADMINISTRAR</a></li>
               </ul>
             </li>
             <li class="sub-menu">
               <a href="javascript:;" >
-                <i class="fa fa-book"></i>
-                <span>Extra Pages</span>
+                <i class="fa fa-users"></i>
+                <span>ENCARGADOS</span>
               </a>
               <ul class="sub">
-                <li><a href="#" ui-sref="blank">Blank Page</a></li>
-                <li><a href="#" ui-sref="home">Login</a></li>
-                <li><a href="lock_screen.html">Lock Screen</a></li>
+                <li><a href="#" ui-sref="nuevo_encargado">NUEVO ENCARGADO</a></li>
+                <li><a href="#" ui-sref="administrar_encargado">ADMINISTRAR</a></li>
               </ul>
             </li>
           </ul>
@@ -186,11 +184,13 @@
           <ui-view></ui-view>
       </section>
 
+
+
     <!--main content end-->
     <!--footer start-->
     <footer class="site-footer">
       <div class="text-center">
-        2018 - Hector Gonzalez
+        2018 -VisualDeer
         <a href="index.html#" class="go-top">
           <i class="fa fa-angle-up"></i>
         </a>
@@ -208,19 +208,18 @@
   <script type="text/javascript" src="app/service.app.js"></script>
   <script type="text/javascript" src="app/home/home.controller.js"></script>
   <script type="text/javascript" src="app/profile/profile.controller.js"></script>
-  <script type="text/javascript" src="app/basic_table/basic_table.controller.js"></script>
-  <script type="text/javascript" src="app/blank/blank.controller.js"></script>
+  <script type="text/javascript" src="app/administrar_equipos/administrar_equipos.controller.js"></script>
+  <script type="text/javascript" src="app/nuevo_encargado/nuevo_encargado.controller.js"></script>
   <script type="text/javascript" src="app/buttons/buttons.controller.js"></script>
-  <script type="text/javascript" src="app/calendar/calendar.controller.js"></script>
   <script type="text/javascript" src="app/chartjs/chartjs.controller.js"></script>
-  <script type="text/javascript" src="app/form_component/form_component.controller.js"></script>
-  <script type="text/javascript" src="app/gallery/gallery.controller.js"></script>
+  <script type="text/javascript" src="app/administrar_encargado/administrar_encargado.controller.js"></script>
+  <script type="text/javascript" src="app/administrar_operadores/administrar_operadores.controller.js"></script>
   <script type="text/javascript" src="app/login/LoginCtrl.js"></script>
-  <script type="text/javascript" src="app/general/general.controller.js"></script>
+  <script type="text/javascript" src="app/nuevoEquipo/nuevoEquipo.controller.js"></script>
   <script type="text/javascript" src="app/morris/morris.controller.js"></script>
   <script type="text/javascript" src="app/panels/panels.controller.js"></script>
   <script type="text/javascript" src="app/responsive_table/responsive_table.controller.js"></script>
-  <script type="text/javascript" src="app/todo_list/todo_list.controller.js"></script>
+  <script type="text/javascript" src="app/nuevoOperador/nuevoOperador.controller.js"></script>
 
 
   <!--THEME-->
@@ -246,7 +245,7 @@
 
 
   <script type="text/javascript">
-    $(document).ready(function () {
+    /*$(document).ready(function () {
       var unique_id = $.gritter.add({
         // (string | mandatory) the heading of the notification
         title: 'Bienvenido',
@@ -263,7 +262,7 @@
       });
 
       return false;
-    });
+    });*/
   </script>
 
   <script type="application/javascript">
@@ -300,5 +299,69 @@
     }
   </script>
 
-  </body>
+<script>
+  
+
+$(document).on('click', '#close-preview', function(){ 
+    $('.image-preview').popover('hide');
+    // Hover befor close the preview
+    $('.image-preview').hover(
+        function () {
+           $('.image-preview').popover('show');
+        }, 
+         function () {
+           $('.image-preview').popover('hide');
+        }
+    );    
+});
+
+$(function() {
+    // Create the close button
+    var closebtn = $('<button/>', {
+        type:"button",
+        text: 'x',
+        id: 'close-preview',
+        style: 'font-size: initial;',
+    });
+    closebtn.attr("class","close pull-right");
+    // Set the popover default content
+    $('.image-preview').popover({
+        trigger:'manual',
+        html:true,
+        title: "<strong>Preview</strong>"+$(closebtn)[0].outerHTML,
+        content: "There's no image",
+        placement:'bottom'
+    });
+    // Clear event
+    $('.image-preview-clear').click(function(){
+        $('.image-preview').attr("data-content","").popover('hide');
+        $('.image-preview-filename').val("");
+        $('.image-preview-clear').hide();
+        $('.image-preview-input input:file').val("");
+        $(".image-preview-input-title").text("Browse"); 
+    }); 
+    // Create the preview image
+    $(".image-preview-input input:file").change(function (){     
+        var img = $('<img/>', {
+            id: 'dynamic',
+            width:250,
+            height:200
+        });      
+        var file = this.files[0];
+        var reader = new FileReader();
+        // Set preview image into the popover data-content
+        reader.onload = function (e) {
+            $(".image-preview-input-title").text("Change");
+            $(".image-preview-clear").show();
+            $(".image-preview-filename").val(file.name);            
+            img.attr('src', e.target.result);
+            $(".image-preview").attr("data-content",$(img)[0].outerHTML).popover("show");
+        }        
+        reader.readAsDataURL(file);
+    });  
+});
+
+</script>  
+  
+ </body>
 </html>
