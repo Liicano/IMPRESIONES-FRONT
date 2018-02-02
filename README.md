@@ -1,2 +1,2 @@
 ###
-Node DashGum template
+Sistema de inventario para equipos audiovisuales.
