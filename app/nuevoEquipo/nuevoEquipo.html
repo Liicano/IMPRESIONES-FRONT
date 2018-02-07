@@ -6,45 +6,45 @@
 <h4 class="text-warning">Registro</h4>
 <hr class="divider">
 
-<form class="form-group">
+<form class="form-group" id="newEquipoForm">
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Codigo">
+    <input id="codigo" type="text" class="form-control" name="username" placeholder="Codigo" ng-model="codigo" required>
   </div>
 <hr class="divider">
 
 <div class="form-group">
   <label for="usr">Nombre</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="nombre" required>
 </div>
 <div class="form-group"> 
   <label for="pwd">Descripcion</label>
-  <textarea type="text" class="form-control" id="pwd"></textarea>
+  <textarea type="text" class="form-control" id="pwd" ng-model="descripcion" required></textarea>
 </div>
 <div class="row">
     <div class="col-md-6">
 <div class="form-group">
   <label for="usr">Serial 1</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="serial_1" required>
 </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label for="usr">Serial 2</label>
-         <input type="text" class="form-control" id="usr">
+         <input type="text" class="form-control" id="usr" ng-model="serial_2" required>
 </div>
     </div>
 </div>
  <div class="form-group">
   <label for="usr">Modelo</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="modelo" required>
 </div>
 <div class="form-group">
   <label for="usr">Fecha de compra</label>
-  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}'>
+  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}' required>
 </div>
 
-<button class="btn btn-sm btn-success btn-block">Guardar Equipo</button>
+<button class="btn btn-sm btn-success btn-block" ng-click="newEquipo(codigo, nombre, descripcion, serial_1, serial_2, modelo, fecha_compra, pais, estado, avenida, calle, codigo_postal, punto_referencia)">Guardar Equipo</button>
 
 
 </form>
@@ -63,35 +63,35 @@
 
 <div class="form-group">
   <label for="usr">Pais</label>
-  <input type="text" class="form-control" id="" {{attr}}  value='{{pais}}'>
+  <input type="text" class="form-control" id="" {{attr}}  value='{{pais}}' ng-model="pais" required>
 </div>
 
 <div class="form-group">
   <label for="usr">Estado</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{estado}}'>
+  <input type="text" class="form-control" id="" {{attr}} value='{{estado}}' ng-model="estado" required>
 </div>
 
 <div class="form-group">
   <label for="usr">Avenida</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{avenida}}'>
+  <input type="text" class="form-control" id="" {{attr}} value='{{avenida}}' ng-model="avenida" required>
 </div>
 
 <div class="form-group">
   <label for="usr">Calle</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{calle}}'>
+  <input type="text" class="form-control" id="" {{attr}} value='{{calle}}' ng-model="calle" required>
 </div>
 
 <div class="row">
     <div class="col-md-6">
   <div class="form-group">
   <label for="usr">Codigo postal</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{codigopostal}}'>
+  <input type="text" class="form-control" id="" {{attr}} value='{{codigopostal}}' ng-model="codigo_postal" required>
 </div>
-    </div>
+    </div>  
     <div class="col-md-6">
      <div class="form-group">
         <label for="usr">Punto de referencia</label>
-        <textarea name="" id="" cols="30" rows="5" class="form-control" {{attr}}="true" value='{{puntoreferencia}}'></textarea>
+        <textarea name="" id="" cols="30" rows="5" class="form-control" {{attr}}="true" value='{{puntoreferencia}}' ng-model="punto_referencia" required></textarea>
         </div>
     </div>
 </div>

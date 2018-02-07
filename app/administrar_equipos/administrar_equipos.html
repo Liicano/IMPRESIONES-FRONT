@@ -20,112 +20,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
+                    <tr ng-repeat="equipo in equipos">
+                        <td><a>{{equipo.codigo}}</a></td>
+                        <td class="hidden-phone">{{equipo.nombre}}</td>
+                        <td>{{equipo.descripcion}}</td>
+                        <td>{{equipo.modelo}}</td>
+                        <td>{{equipo.fecha_compra}}</td>
+                        <td><span class="label label-info label-mini">{{equipo.serial_1}}</span> - <span class="label label-info label-mini">{{equipo.serial_2}}</span></td>
+                         <td><span class="label label-warning">{{equipo.ubicacion['0'].pais}} - {{equipo.ubicacion['0'].estado}} - {{equipo.ubicacion['0'].avenida}} - {{equipo.ubicacion['0'].calle}}</span></td>
                         <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#ModalEliminar"><i class="fa fa-trash-o "></i></button>
+                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" ng-click="getData(equipo.codigo)"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#ModalEliminar" ng-click="delete(equipo.codigo)"><i class="fa fa-trash-o "></i></button>
                         </td>
                     </tr>
 
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                    
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-                       <tr>
-                        <td><a href="basic_table.html#">13258AS45</a></td>
-                        <td class="hidden-phone">VIDEO BEEN</td>
-                        <td>VIDEO PROYECTOR</td>
-                        <td>A31-24</td>
-                        <td>30-01-2018</td>
-                        <td><span class="label label-info label-mini">152468</span> - <span class="label label-info label-mini">321856</span></td>
-                         <td><span class="label label-warning">VENEZUELA - ZULIA - PROLONGACION C2 - 75A</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
+                      
                     
 
                     </tbody>
@@ -148,39 +57,39 @@
                                         <form class="form-group">
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Codigo">
+    <input id="email" type="text" class="form-control" name="email" placeholder="Codigo" ng-model="Modalcodigo">
   </div>
 <hr class="divider">
 
 <div class="form-group">
   <label for="usr">Nombre</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="Modalnombre">
 </div>
 <div class="form-group"> 
   <label for="pwd">Descripcion</label>
-  <textarea type="text" class="form-control" id="pwd"></textarea>
+  <textarea type="text" class="form-control" id="pwd" ng-model="Modaldescripcion"></textarea>
 </div>
 <div class="row">
     <div class="col-md-6">
 <div class="form-group">
   <label for="usr">Serial 1</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="Modalserial_1">
 </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
         <label for="usr">Serial 2</label>
-         <input type="text" class="form-control" id="usr">
+         <input type="text" class="form-control" id="usr" ng-model="Modalserial_2">
 </div>
     </div>
 </div>
  <div class="form-group">
   <label for="usr">Modelo</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="Modalmodelo">
 </div>
 <div class="form-group">
   <label for="usr">Fecha de compra</label>
-  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}'>
+  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}' ng-model="Modalfecha_compra">
 </div>
 
 
@@ -191,35 +100,35 @@
 <div class="col-md-6">
     <div class="form-group">
   <label for="usr">Pais</label>
-  <input type="text" class="form-control" id="" {{attr}}  value='{{pais}}'>
+  <input type="text" class="form-control" ng-model="Modalpais">
 </div>
 
 <div class="form-group">
   <label for="usr">Estado</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{estado}}'>
+  <input type="text" class="form-control" ng-model="Modalestado">
 </div>
 
 <div class="form-group">
   <label for="usr">Avenida</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{avenida}}'>
+  <input type="text" class="form-control" ng-model="Modalavenida">
 </div>
 
 <div class="form-group">
   <label for="usr">Calle</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{calle}}'>
+  <input type="text" class="form-control" ng-model="Modalcalle">
 </div>
 
 <div class="row">
     <div class="col-md-6">
   <div class="form-group">
   <label for="usr">Codigo postal</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{codigopostal}}'>
+  <input type="text" class="form-control" ng-model="Modalcodigo_postal">
 </div>
     </div>
     <div class="col-md-6">
      <div class="form-group">
         <label for="usr">Punto de referencia</label>
-        <textarea name="" id="" cols="30" rows="5" class="form-control" {{attr}}="true" value='{{puntoreferencia}}'></textarea>
+        <textarea name="" id="" cols="30" rows="5" class="form-control" ng-model="Modalpunto_referencia"></textarea>
         </div>
     </div>
 </div>
@@ -229,7 +138,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-success">Guardar cambios</button>
+                                <button type="button" class="btn btn-success" ng-click="putChanges()">Guardar cambios</button>
                             </div>
                         </div>
                     </div>
@@ -249,7 +158,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
-                                <button type="button" class="btn btn-danger">SI</button>
+                                <button type="button" class="btn btn-danger" ng-click="deleteEquipo(equipo.codigo)">SI</button>
                             </div>
                         </div>
     </div>

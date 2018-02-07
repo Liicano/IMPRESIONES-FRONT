@@ -118,3 +118,23 @@ var Script = function () {
 
 
 }();
+
+
+$(document).ready(function() {
+$("#newEquipoForm").validate({
+  rules: {
+    codigo: "required",
+    nombre: {
+      required: true
+    }
+  },
+  messages: {
+    codigo: "Ingrese un codigo por favor",
+    nombre: {
+      required: "Ingrese un nombre por favor"
+    }
+  }
+
+});
+
+});
