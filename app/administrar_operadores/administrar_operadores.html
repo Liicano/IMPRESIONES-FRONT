@@ -6,169 +6,41 @@
      <div class="col-md-4" style="margin-top: 15px;">
         <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-        <input id="email" type="text" class="form-control" name="email" placeholder="Busqueda">
+        <input id="email" type="text" class="form-control" name="busqueda" placeholder="Busqueda" ng-model="BusquedaOp">
         </div>
      </div>
  </div>
     <hr>
-    <div class="row mt">
-      
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                    <!-- WHITE PANEL - TOP USER -->
-                    <div class="white-panel pn">
-                        <div class="white-header">
-
-                            <button class="pull-right btn btn-sm btn-danger" style="margin-left: 5px;" data-toggle="modal" data-target="#ModalEliminar"><span class="glyphicon glyphicon-remove"></span></button>
-                            <button class="pull-right btn btn-sm btn-warning" data-toggle="modal" data-target="#modalEdit"><span class="fa fa-edit"></span></button>
-                            <h5>OPERADOR</h5>
-                        </div>
-                        <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-                        <p><b>RUMER TOVAR</b></p>
-                        <p><b>CI: </b>26185824</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="small mt">CORREO</p>
-                                <p>rumertovar@gmail.com</p>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p class="small mt">NUMERO</p>
-                                <p>0412-1701402</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-        </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                    <!-- WHITE PANEL - TOP USER -->
-                    <div class="white-panel pn">
-                        <div class="white-header">
-
-                            <button class="pull-right btn btn-sm btn-danger" style="margin-left: 5px;"><span class="glyphicon glyphicon-remove"></span></button>
-                            <button class="pull-right btn btn-sm btn-warning"><span class="fa fa-edit"></span></button>
-                            <h5>OPERADOR</h5>
-                        </div>
-                        <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-                        <p><b>RUMER TOVAR</b></p>
-                        <p><b>CI: </b>26185824</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="small mt">CORREO</p>
-                                <p>rumertovar@gmail.com</p>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p class="small mt">NUMERO</p>
-                                <p>0412-1701402</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-        </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                    <!-- WHITE PANEL - TOP USER -->
-                    <div class="white-panel pn">
-                        <div class="white-header">
-
-                            <button class="pull-right btn btn-sm btn-danger" style="margin-left: 5px;"><span class="glyphicon glyphicon-remove"></span></button>
-                            <button class="pull-right btn btn-sm btn-warning"><span class="fa fa-edit"></span></button>
-                            <h5>OPERADOR</h5>
-                        </div>
-                        <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-                        <p><b>RUMER TOVAR</b></p>
-                        <p><b>CI: </b>26185824</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="small mt">CORREO</p>
-                                <p>rumertovar@gmail.com</p>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p class="small mt">NUMERO</p>
-                                <p>0412-1701402</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-        </div>
-       
-    </div><!-- /row -->
+   
 
     <div class="row mt">
           
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+           
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc" ng-repeat="operador in operadores | filter: BusquedaOp">
                     <!-- WHITE PANEL - TOP USER -->
                     <div class="white-panel pn">
                         <div class="white-header">
 
-                            <button class="pull-right btn btn-sm btn-danger" style="margin-left: 5px;"><span class="glyphicon glyphicon-remove"></span></button>
-                            <button class="pull-right btn btn-sm btn-warning"><span class="fa fa-edit"></span></button>
-                            <h5>OPERADOR</h5>
+                            <button class="pull-right btn btn-sm btn-danger" data-toggle="modal" data-target="#ModalEliminar" style="margin-left: 5px"; ng-click="deleteOperador(operador.cedula)"><span class="glyphicon glyphicon-remove"></span></button>
+                            
+                            <button class="pull-right btn btn-sm btn-warning" data-toggle="modal" data-target="#modalEdit" ng-click="getData(operador.cedula)"><span class="fa fa-edit"></span></button>
+
+                             <button class="pull-right btn btn-sm btn-primary" data-toggle="modal" data-target="#ModalReportes" ng-click="getReportes(operador)" style="margin-right: 5px"><span class="fa fa-eye"></span></button>
+
+                            <h5 class="text-warning">OPERADOR</h5>
                         </div>
                         <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-                        <p><b>RUMER TOVAR</b></p>
-                        <p><b>CI: </b>26185824</p>
+                        <p><b class="text-info">{{operador.nombre}} {{operador.apellido}}</b></p>
+                        <p class="text-info"><b>CI: </b>{{operador.cedula}}</p>
                         <div class="row">
                             <div class="col-md-6">
-                                <p class="small mt">CORREO</p>
-                                <p>rumertovar@gmail.com</p>
+                                <p class="small mt text-warning">CORREO</p>
+                                <p class="text-info">{{operador.correo}}</p>
 
                             </div>
                             <div class="col-md-6">
-                                <p class="small mt">NUMERO</p>
-                                <p>0412-1701402</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-        </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                    <!-- WHITE PANEL - TOP USER -->
-                    <div class="white-panel pn">
-                        <div class="white-header">
-
-                            <button class="pull-right btn btn-sm btn-danger" style="margin-left: 5px;"><span class="glyphicon glyphicon-remove"></span></button>
-                            <button class="pull-right btn btn-sm btn-warning"><span class="fa fa-edit"></span></button>
-                            <h5>OPERADOR</h5>
-                        </div>
-                        <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-                        <p><b>RUMER TOVAR</b></p>
-                        <p><b>CI: </b>26185824</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="small mt">CORREO</p>
-                                <p>rumertovar@gmail.com</p>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p class="small mt">NUMERO</p>
-                                <p>0412-1701402</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-        </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-                    <!-- WHITE PANEL - TOP USER -->
-                    <div class="white-panel pn">
-                        <div class="white-header">
-
-                            <button class="pull-right btn btn-sm btn-danger" style="margin-left: 5px;"><span class="glyphicon glyphicon-remove"></span></button>
-                            <button class="pull-right btn btn-sm btn-warning"><span class="fa fa-edit"></span></button>
-                            <h5>OPERADOR</h5>
-                        </div>
-                        <p><img src="assets/img/ui-zac.jpg" class="img-circle" width="50"></p>
-                        <p><b>RUMER TOVAR</b></p>
-                        <p><b>CI: </b>26185824</p>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p class="small mt">CORREO</p>
-                                <p>rumertovar@gmail.com</p>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p class="small mt">NUMERO</p>
-                                <p>0412-1701402</p>
+                                <p class="small mt text-warning">NUMERO</p>
+                                <p class="text-info">{{operador.telefono}}</p>
                             </div>
                         </div>
                         
@@ -191,79 +63,51 @@
                                         <form class="form-group">
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad">
+    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad" ng-model="Modalcedula">
   </div>
 <hr class="divider">
 
 <div class="form-group">
   <label for="usr">Nombre</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="Modalnombre">
 </div>
 <div class="form-group"> 
   <label for="pwd">Apellido</label>
-  <input type="text" class="form-control" id="pwd">
+  <input type="text" class="form-control" id="pwd" ng-model="Modalapellido">
 </div>
 
 <div class="form-group">
 <label for="usr">Cargo</label>
-<input type="text" class="form-control" id="usr">
+<input type="text" class="form-control" id="usr" ng-model="Modalcargo">
 </div>
 
 </form>
-                                    </div>
-                                    <div class="col-md-6">
+  </div>
+  <div class="col-md-6">
                                         
-                                        <div class="row">
-<div class="col-md-4">
-<div class="form-group">
-  <label for="usr">Avenida</label>
-  <input type="text" class="form-control" id="usr">
-</div>
-</div>
-<div class="col-md-4">
-<div class="form-group">
-<label for="usr">Calle</label>
-<input type="text" class="form-control" id="usr">
-</div>
-</div>
-
-<div class="col-md-4">
-<div class="form-group">
-<label for="usr">Casa</label>
-<input type="text" class="form-control" id="usr">
-</div>
-</div>
-
-</div>
+  <h4>Contacto</h4>
 <hr class="divider">
 
 <div class="form-group">
   <label for="usr">Email</label>
-  <input type="email" class="form-control" id="usr">
+  <input type="email" class="form-control" id="usr" ng-model="Modalcorreo">
 </div>
 
 <div class="row">
   <div class="col-md-6">
   <div class="form-group">
   <label for="usr">Numero de telefono</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="ModalTelefono">
 </div>
   </div>
-   <div class="col-md-6">
-     <div class="form-group">
-  <label for="usr">Punto de referencia</label>
-  <textarea type="text" class="form-control" id="usr"></textarea>
-</div>
-  </div>
-</div>
 
-                                        
+</div>                                        
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-success">Guardar cambios</button>
+                                <button type="button" class="btn btn-success" ng-click="putChanges()">Guardar cambios</button>
                             </div>
                         </div>
                     </div>
@@ -284,11 +128,54 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
-                                <button type="button" class="btn btn-danger">SI</button>
+                                <button type="button" class="btn btn-danger" ng-click="deleteOp()">SI</button>
                             </div>
                         </div>
     </div>
 </div>
+
+<!-- Modal ver reportes -->
+<div class="modal fade" id="ModalReportes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Reportes del operador  <span class="pull-right"> {{OperadorNombre}} </span></h4>
+
+                            </div>
+                            <div class="modal-body">
+                                <hr class="divider">
+                                <table class="table table-condensed table-hover">
+                                  <thead>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>Modelo</th>
+                                    <th>Fecha de salida</th>
+                                    <!-- <th>Fecha de entrada</th> -->
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat="report in OperadorReportes">
+                                      <td class="text-info">{{report.codigo}}</td>
+                                      <td>{{report.nombre}}</td>
+                                      <td>{{report.modelo}}</td>
+                                      <td>{{report.fecha_salida}}</td>
+                                      <span ng-if="report.fecha_entrada != null">
+                                        <td>{{report.fecha_entrada}}</td>
+                                      </span>
+                                      <span ng-if="report.fecha_entrada == null">
+                                        <td><span class="label label-danger">Equipo sin devolver</span></td>
+                                      </span>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">SALIR</button>
+                            </div>  
+                        </div>
+    </div>
+</div>
+
+
 
 
 </section>

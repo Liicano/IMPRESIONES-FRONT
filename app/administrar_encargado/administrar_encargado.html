@@ -13,15 +13,15 @@
     <hr>
     <div class="row mt">
      
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc" ng-repeat="encargado in encargados">
             <div class="weather-2 pn" style="border-radius: 15px;">
                         <div class="weather-2-header">
                             <div class="row">
                                 <div class="col-sm-6 col-xs-6">
-                                    <p>RUMER TOVAR</p>
+                                    <p>{{encargado.nombre}} {{encargado.apellido}}</p>
                                 </div>
                                 <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>26185824</p>
+                                    <p class=""><b>CI: </b>{{encargado.cedula}}</p>
                                 </div>
                             </div>
                         </div><!-- /weather-2 header -->
@@ -30,71 +30,13 @@
                         </div>
                         <div class="row data">
                             <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>ENCARGADO</b></h4>
-                                <h6>rumertovar@gmail.com</h6>
-                                <h6>04121701402</h6>
+                                <h4><b>{{encargado.cargo}}</b></h4>
+                                <h6>{{encargado.correo}}</h6>
+                                <h6>{{encargado.telefono}}</h6>
                             </div>
                             <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove  danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-            <div class="weather-2 pn" style="border-radius: 15px;">
-                        <div class="weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>RUMER TOVAR</p>
-                                </div>
-                                <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>26185824</p>
-                                </div>
-                            </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row centered">
-                            <img src="assets/img/ui-zac.jpg" class="img-circle" width="120">
-                        </div>
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>ENCARGADO</b></h4>
-                                <h6>rumertovar@gmail.com</h6>
-                                <h6>04121701402</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove  danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-            <div class="weather-2 pn" style="border-radius: 15px;">
-                        <div class="weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>RUMER TOVAR</p>
-                                </div>
-                                <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>26185824</p>
-                                </div>
-                            </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row centered">
-                            <img src="assets/img/ui-zac.jpg" class="img-circle" width="120">
-                        </div>
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>ENCARGADO</b></h4>
-                                <h6>rumertovar@gmail.com</h6>
-                                <h6>04121701402</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove  danger"></i></button>
+                                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalEdit" ng-click="getData(encargado.cedula)"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
+                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#ModalEliminar" ng-click="deleteEncargado(encargado.cedula)"><i class="glyphicon glyphicon-remove  danger"></i></button>
                             </div>
                         </div>
                     </div>
@@ -102,95 +44,93 @@
            
     </div><!-- /row -->
 
-    <div class="row mt">
-         
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-            <div class="weather-2 pn" style="border-radius: 15px;">
-                        <div class="weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>RUMER TOVAR</p>
-                                </div>
-                                <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>26185824</p>
-                                </div>
-                            </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row centered">
-                            <img src="assets/img/ui-zac.jpg" class="img-circle" width="120">
-                        </div>
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>ENCARGADO</b></h4>
-                                <h6>rumertovar@gmail.com</h6>
-                                <h6>04121701402</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove  danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
-        </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-            <div class="weather-2 pn" style="border-radius: 15px;">
-                        <div class="weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>RUMER TOVAR</p>
-                                </div>
-                                <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>26185824</p>
-                                </div>
-                            </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row centered">
-                            <img src="assets/img/ui-zac.jpg" class="img-circle" width="120">
-                        </div>
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>ENCARGADO</b></h4>
-                                <h6>rumertovar@gmail.com</h6>
-                                <h6>04121701402</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove  danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
-        </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
-            <div class="weather-2 pn" style="border-radius: 15px;">
-                        <div class="weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>RUMER TOVAR</p>
-                                </div>
-                                <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>26185824</p>
+
+<!--MOdal EDITAR-->
+  <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Editar ENCARGADO</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <form class="form-group">
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad" ng-model="Modalcedula">
+  </div>
+<hr class="divider">
+
+<div class="form-group">
+  <label for="usr">Nombre</label>
+  <input type="text" class="form-control" id="usr" ng-model="Modalnombre">
+</div>
+<div class="form-group"> 
+  <label for="pwd">Apellido</label>
+  <input type="text" class="form-control" id="pwd" ng-model="Modalapellido">
+</div>
+
+<div class="form-group">
+<label for="usr">Cargo</label>
+<input type="text" class="form-control" id="usr" ng-model="Modalcargo">
+</div>
+
+</form>
+  </div>
+  <div class="col-md-6">
+                                        
+  <h4>Contacto</h4>
+<hr class="divider">
+
+<div class="form-group">
+  <label for="usr">Email</label>
+  <input type="email" class="form-control" id="usr" ng-model="Modalcorreo">
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+  <div class="form-group">
+  <label for="usr">Numero de telefono</label>
+  <input type="text" class="form-control" id="usr" ng-model="ModalTelefono">
+</div>
+  </div>
+
+</div>                                        
+                                    </div>
                                 </div>
                             </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row centered">
-                            <img src="assets/img/ui-zac.jpg" class="img-circle" width="120">
-                        </div>
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>ENCARGADO</b></h4>
-                                <h6>rumertovar@gmail.com</h6>
-                                <h6>04121701402</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove  danger"></i></button>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-success" ng-click="putChanges()">Guardar cambios</button>
                             </div>
                         </div>
                     </div>
-        </div>
-           
-    </div><!-- /row -->
+                </div>
+
+
+<!--Modal ELIMINAR-->
+<div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Eliminar Encrgado</h4>
+                            </div>
+                            <div class="modal-body">
+                                ¿Esta seguro que desea eliminar este Encargado?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
+                                <button type="button" class="btn btn-danger" ng-click="deleteOp()">SI</button>
+                            </div>
+                        </div>
+    </div>
+</div>
+
+
 
 </section>

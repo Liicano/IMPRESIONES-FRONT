@@ -1,161 +1,184 @@
 <section class="wrapper">
-    <h4>INICIO</h4>
+   <h4 class="text-center text-info">Registra una operacion</h4>
+     
     <div class="row">
-        <div class="col-lg-9 main-chart">
-            <div class="row mtbox">
-                <div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-                    <div class="box1">
-                        <span class="fa fa-check text-success"></span>
-                        <h3>{{cantidad_disponibles}}</h3>
-                    </div>
-                    <p>Equipos en buen estado y en el inventario</p>
-                </div>
-                <div class="col-md-2 col-sm-2 box0">
-                    <div class="box1">
-                        <span class="fa fa-warning text-warning"></span>
-                        <h3>{{cantidad_mantenimiento}}</h3>
-                    </div>
-                    <p>Equipos en mantenimiento</p>
-                </div>
-                <div class="col-md-2 col-sm-2 box0">
-                    <div class="box1">
-                        <span class="glyphicon glyphicon-remove text-danger"></span>
-                        <h3>{{cantidad_fueraservicio}}</h3>
-                    </div>
-                    <p>Equipos fuera de servicio</p>    
-                </div>
-                <div class="col-md-2 col-sm-2 box0">
-                    <div class="box1">
-                        <span class="glyphicon glyphicon-user"></span>
-                        <h3>12</h3>
-                    </div>
-                    <p>Operadores registrados en el dia</p>
-                </div>
-                <div class="col-md-2 col-sm-2 box0">
-                    <div class="box1">
-                        <span class="fa fa-list-alt"></span>
-                        <h3>{{cantidad_equipos}}</h3>
-                    </div>
-                    <p>Equipos en el inventario</p>
-                </div>
+        <hr class="divider">
 
-            </div><!-- /row mt -->
-
-            <div class="row mt">
-                <!-- SERVER STATUS PANELS -->
-                   <div class="col-md-4 mb">
-                    <!-- INSTAGRAM PANEL -->
-                    <div class="instagram-panel pn" style="border-radius: 15px;">
-                        <i class="fa fa-list-alt fa-4x"></i>
-                        <p>INVENTARIO
-                        </p>
-                        <p><i class="fa fa-list-alt"></i> 23</p>
-                        <a href="#" style="text-decoration: none;">¡CLICK AQUI!</a>
-                    </div>
-                </div><!-- /col-md-4 -->
-
-
-
-                <div class="col-md-4 mb">
-                    <!-- INSTAGRAM PANEL -->
-                    <div class="instagram-panel pn" style="border-radius: 15px;">
-                        <i class="fa fa-file-text fa-4x"></i>
-                        <p>REPORTE DE EQUIPOS
-                        </p>
-                        <p><i class="fa fa-file-text"></i> 10</p>
-                        <a href="#" style="text-decoration: none;">¡CLICK AQUI!</a>
-                    </div>
-                </div><!-- /col-md-4 -->
-
-                <div class="col-md-4 mb">
-                    <!-- INSTAGRAM PANEL -->
-                    <div class="instagram-panel pn" style="border-radius: 15px;">
-                        <i class="fa fa-book fa-4x"></i>
-                        <p>REPORTE DE OPERADORES
-                        </p>
-                        <p><i class="fa fa-book"></i> 5</p>
-                        <a href="#" style="text-decoration: none;">¡CLICK AQUI!</a>
-                    </div>
-                </div><!-- /col-md-4 -->
-
-
-            </div><!-- /row -->
-
-
-        </div><!-- /col-lg-9 END SECTION MIDDLE -->
-
-
-        <!-- **********************************************************************************************************************************************************
-        RIGHT SIDEBAR CONTENT
-        *********************************************************************************************************************************************************** -->
-
-        <div class="col-lg-3 ds">
-            <!--COMPLETED ACTIONS DONUTS CHART-->
-            <h3>ULTIMOS MOVIMIENTOS </h3>
-
-            <!-- First Action -->
-            <div class="desc">
-                <div class="thumb">
-                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                </div>
-                <div class="details">
-                    <p><muted>2019-01-29</muted><br/>
-                        <a href="#">Jose Perez</a> - <b>Extraccion</b><br/><p class="label label-warning">VIDEO BEEN</p>
-                    </p>
-                </div>
+        <div class="row">
+        <div class="container">
+            <div class="col-sm-6">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                 <input id="codigo" type="text"  class="form-control" name="username" placeholder="Codigo del equipo" ng-model="codigo"  required>
+                  <span class="input-group-btn">
+                     <button class="btn btn-secondary" type="button" ng-click="findEquipo(codigo)"><span class="glyphicon glyphicon-search"></span></button>
+                 </span>
+                 </div>
             </div>
-              <!-- First Action -->
-            <div class="desc">
-                <div class="thumb">
-                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                </div>
-                <div class="details">
-                    <p><muted>2019-01-29</muted><br/>
-                        <a href="#">Jose Perez</a> - <b>Extraccion</b><br/><p class="label label-warning">VIDEO BEEN</p>
-                    </p>
-                </div>
+            <div class="col-sm-6">
+                 <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                 <input id="codigo" type="text" class="form-control" name="username" placeholder="Cedula del operador" ng-model="operador.cedula" required>
+                   <span class="input-group-btn">
+                     <button class="btn btn-secondary" type="button" ng-click="addOperador(operador.cedula)"><span class="glyphicon glyphicon-search"></span></button>
+                 </span>
+                 </div>
             </div>
-              <!-- First Action -->
-            <div class="desc">
-                <div class="thumb">
-                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                </div>
-                <div class="details">
-                    <p><muted>2019-01-29</muted><br/>
-                        <a href="#">Jose Perez</a> - <b>Extraccion</b><br/><p class="label label-warning">VIDEO BEEN</p>
-                    </p>
-                </div>
             </div>
-              <!-- First Action -->
-            <div class="desc">
-                <div class="thumb">
-                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                </div>
-                <div class="details">
-                    <p><muted>2019-01-29</muted><br/>
-                        <a href="#">Jose Perez</a> - <b>Extraccion</b><br/><p class="label label-warning">VIDEO BEEN</p>
-                    </p>
-                </div>
-            </div>
-              <!-- First Action -->
-            <div class="desc">
-                <div class="thumb">
-                    <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                </div>
-                <div class="details">
-                    <p><muted>2019-01-29</muted><br/>
-                        <a href="#">Jose Perez</a> - <b>Extraccion</b><br/><p class="label label-warning">VIDEO BEEN</p>
-                    </p>
+        </div>
+        <hr class="divider">
+    
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                   <div class="container-fluid">
+                   <div class="col-sm-12">
+                    <hr class="divider">
+                            <p class="text-info text-center">
+                                ¡Si el Equipo no se encuentra, ingresar a la pestaña registrar Equipo!
+                            </p>
+                            <hr class="divider">
+                        <table class="table table-condensed table-responsive">
+                            <thead>
+                                <th>Codigo</th>
+                                <th>Nombre</th>
+                                <th>Marca</th>
+                                <th>Seriales</th>
+                                <th>Agregar</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ng-model="equipo.codigo">{{equipoData.codigo}}</td>
+                                    <td ng-model="equipo.nombre">{{equipoData.nombre}}</td>
+                                    <td ng-model="equipo.modelo">{{equipoData.modelo}}</td>
+                                    <td>
+                                    <span class="label label-info label-mini" ng-model="equipo.serial_1">{{equipoData.serial_1}}</span> - <span class="label label-info label-mini" ng-model="equipo.serial_2">{{equipoData.serial_2}}</span>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm" ng-click="addEquipo(codigo)"><span class="glyphicon glyphicon-plus"></span></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  
+                   </div>
                 </div>
             </div>
 
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="container-fluid">
+                            <hr class="divider">
+                            <p class="text-info text-center">
+                                ¡Si el operador no se encuentra, ingresar a la pestaña registrar operador!
+                            </p>
+                            <hr class="divider">
 
-            <hr class="divider">
-          
+                            <table class="table table-condensed table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Cedula</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{operadorData.cedula}}</td>
+                                        <td>{{operadorData.nombre}}</td>
+                                        <td>{{operadorData.apellido}}</td>
+                                        <td class="text-center">
+                                           <span class="glyphicon glyphicon-user text-success">
+                                             
+                                           </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-          
-       
+                        </div>
+                    </div>
+                </div>
 
-        </div><!-- /col-lg-3 -->
-    </div><! --/row -->
+
+            </div>
+
+
+        </div>
+
+
+<hr class="divider">
+<div class="row">
+   
+    <div class="col-sm-6">
+    <div class="container-fluid">
+       <div class="panel panel-success">
+           <div class="panel-heading">
+               <p class="pull-left">Productos en operacion para el operador:</p>
+               <p class="pull-right text-warning">{{operadorData.nombre}}   {{operadorData.apellido}}</p>
+               <br>
+           </div>
+           <div class="panel-body">
+            <div class="container-fluid">
+                  <table class="table table-responsive table-condensed table-striped">
+                  <thead>
+                      <tr>
+                          <th>Nombre</th>
+                          <th>Modelo</th>
+                          <th>Seriales</th>
+                          <th>STATUS</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="equipo in equiposReporte">
+                          <td>{{equipo.nombre}}</td>
+                          <td>{{equipo.modelo}}</td>
+                          <td>
+                          <span class="label label-info label-mini">{{equipo.serial_1}}</span> - <span class="label label-info label-mini">{{equipo.serial_2}}</span>
+                          </td>
+                          <td class="text-center">{{equipo.estado_equipo}}</td>
+
+                      </tr>
+                  </tbody>
+              </table>  
+            </div>
+           </div>
+           <div class="panel-footer">
+               <button class="btn btn-block btn-sm btn-primary" ng-click="registrarOperacion(equiposReporte, operadorData)">Registrar operacion</button>
+           </div>
+       </div>
+       </div>
+    </div>
+    <div class="col-sm-6">
+    
+     <div class="container-fluid">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <p class="text-center">Regresar Pedido</p>
+          </div>
+          <div class="panel-body">
+           
+             <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
+                 <input id="codigoDevolver" type="text"  class="form-control" name="codigo" placeholder="Codigo del equipo" ng-model="codigoDevolver"  required>
+                  <span class="input-group-btn">
+                     <button class="btn btn-success" type="button" ng-click="devolverEquipo(codigoDevolver, operadorData)"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                 </span>
+            </div>
+           
+          </div>
+          <div class="panel-footer">
+            <p class="text-center text-info">Regresa los equipos prestados por la empresa</p>
+          </div>
+        </div>
+
+
+     </div>
+    </div>
+</div>
+
+    </div><!--/row -->
 </section>

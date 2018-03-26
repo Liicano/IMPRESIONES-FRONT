@@ -33,6 +33,7 @@
         $scope.Modalserial_1 = response.data.serial_1;
         $scope.Modalserial_2 = response.data.serial_2;
         $scope.Modalmodelo = response.data.modelo;
+        $scope.estado_equipo = response.data.estado_equipo;
         $scope.Modalfecha_compra = response.data.fecha_compra;
         $scope.Modalpais = response.data.ubicacion[0].pais;
         $scope.Modalestado = response.data.ubicacion[0].estado;
@@ -52,6 +53,7 @@
         fecha_compra: $scope.Modalfecha_compra,
         serial_1: $scope.Modalserial_1,
         serial_2: $scope.Modalserial_2,
+        estado_equipo: $scope.estado_equipo,
         ubicacion: {
           pais: $scope.Modalpais,
           estado: $scope.Modalestado,
@@ -81,7 +83,7 @@
             console.log(response.data);
             location.reload()
       });
-    }
+    } 
     }
 
    

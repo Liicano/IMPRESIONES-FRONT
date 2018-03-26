@@ -9,25 +9,25 @@
 <form class="form-group">
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad">
+    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad" ng-model="cedula">
   </div>
 <hr class="divider">
 
 <div class="form-group">
   <label for="usr">Nombre</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="nombre">
 </div>
 <div class="form-group"> 
   <label for="pwd">Apellido</label>
-  <input type="text" class="form-control" id="pwd">
+  <input type="text" class="form-control" id="pwd" ng-model="apellido">
 </div>
 
 <div class="form-group">
 <label for="usr">Cargo</label>
-<input type="text" class="form-control" id="usr">
+<input type="text" class="form-control" id="usr" ng-model="cargo" value="OPERADOR" placeholder="OPERADOR" disabled="true">
 </div>
 
-<button class="btn btn-sm btn-primary btn-block">Registrar Operador</button>
+<button class="btn btn-sm btn-primary btn-block" ng-click="newOperador(nombre, apellido, cargo, cedula, avenida, calle, casa, correo, numero_telefono, punto_referencia)">Registrar Operador</button>
 <hr class="divider">
 
 </form>
@@ -48,20 +48,20 @@
 <div class="col-md-4">
 <div class="form-group">
   <label for="usr">Avenida</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="avenida">
 </div>
 </div>
 <div class="col-md-4">
 <div class="form-group">
 <label for="usr">Calle</label>
-<input type="text" class="form-control" id="usr">
+<input type="text" class="form-control" id="usr" ng-model="calle">
 </div>
 </div>
 
 <div class="col-md-4">
 <div class="form-group">
 <label for="usr">Casa</label>
-<input type="text" class="form-control" id="usr">
+<input type="text" class="form-control" id="usr" ng-model="casa">
 </div>
 </div>
 
@@ -70,20 +70,20 @@
 
 <div class="form-group">
   <label for="usr">Email</label>
-  <input type="email" class="form-control" id="usr">
+  <input type="email" class="form-control" id="usr" ng-model="correo">
 </div>
 
 <div class="row">
   <div class="col-md-6">
   <div class="form-group">
   <label for="usr">Numero de telefono</label>
-  <input type="text" class="form-control" id="usr">
+  <input type="text" class="form-control" id="usr" ng-model="numero_telefono">
 </div>
   </div>
    <div class="col-md-6">
      <div class="form-group">
   <label for="usr">Punto de referencia</label>
-  <textarea type="text" class="form-control" id="usr"></textarea>
+  <textarea type="text" class="form-control" id="usr" ng-model="punto_referencia"></textarea>
 </div>
   </div>
 </div>
@@ -98,35 +98,4 @@
 </section>
 
 
-
-
-<!--
-  
-            <div class="showback">
-                <h4><i class="fa fa-angle-right"></i> Modal Example</h4>
-               
-                <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-                    Launch Modal
-                </button>
-
-               
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                Hi there, I am a Modal Example for Dashgum Admin Panel.
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
--->
 
