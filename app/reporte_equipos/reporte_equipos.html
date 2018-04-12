@@ -1,0 +1,88 @@
+<section class="wrapper">
+<hr class="divider">
+<h3 class="text-center text-info">EQUIPOS</h3>
+<hr class="divider">
+
+   <div class="row mt">
+         <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> TODOS LOS EQUIPOS</h4>
+                <hr class="divider">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-block btn-success" ng-click="totalEquiposPDF()">Reporte</button>
+                </div>
+            </div><!-- /showback -->
+        </div><!-- /col-lg-6 --> 
+
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> EN INVENTARIO</h4>
+                <hr class="divider">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-block btn-default" ng-click="enInventario()">Reporte</button>
+                </div>
+            </div><!-- /showback -->
+
+           
+        </div><!-- /col-lg-4 -->   
+
+         <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> EN PRESTAMO</h4>
+                <hr class="divider">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-block btn-default" ng-click="enPrestamo()">Reporte</button>
+                </div>
+            </div><!-- /showback -->
+
+           
+        </div><!-- /col-lg-6 -->    
+   </div>
+
+  
+<hr class="divider">
+<h3 class="text-center text-danger">SEGUN EL ESTADO DEL EQUIPO</h3>
+<hr class="divider">
+    <div class="row mt">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> DISPONIBLES</h4>
+                <hr class="divider">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-block btn-success" ng-click="equiposDisponibles()">Reporte</button>
+                </div>
+            </div><!-- /showback -->
+
+           
+        </div><!-- /col-lg-6 -->
+
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> MANTENIMIENTO</h4>
+                <hr class="divider">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-block btn-warning" ng-click="equiposMantenimiento()">Reporte</button>
+                </div>
+            </div><!-- /showback -->
+
+           
+        </div><!-- /col-lg-6 -->
+
+     <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> FUERA DE SERVICIO</h4>
+                <hr class="divider">
+                <div class="container-fluid">
+                    <button class="btn btn-sm btn-block btn-danger" ng-click="equiposFueraServicio()">Reporte</button>
+                </div>
+            </div><!-- /showback -->
+
+           
+        </div><!-- /col-lg-6 -->
+
+</div>
+
+
+    </div><!--/ row -->
+</section><! --/wrapper -->

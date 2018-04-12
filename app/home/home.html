@@ -147,7 +147,7 @@
             </div>
            </div>
            <div class="panel-footer">
-               <button class="btn btn-block btn-sm btn-primary" ng-click="registrarOperacion(equiposReporte, operadorData)">Registrar operacion</button>
+               <button class="btn btn-block btn-sm btn-success" data-toggle="modal" data-target="#ModalMover" ng-click="ModalPassData(equiposReporte, operadorData)">Procesar operacion</button>
            </div>
        </div>
        </div>
@@ -171,13 +171,59 @@
            
           </div>
           <div class="panel-footer">
-            <p class="text-center text-info">Regresa los equipos prestados por la empresa</p>
+            <p class="text-center text-info">Ingresa el codigo de un equipo de la operacion y devuelve el prestamo.</p>
           </div>
         </div>
 
 
      </div>
     </div>
+
+
+    <!--Modal MOVER EQUIPO-->
+<div class="modal fade" id="ModalMover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title text-center" id="myModalLabel">Ingresa la ubicacion</h4>
+                            </div>
+                            <div class="modal-body">
+                                  <hr class="divider" >
+                                  <p class="text-center alert alert-info" >Direccion de envio</p>
+                                  <hr class="divider" >
+                                  <div class="form-group" >
+                                    <label for="estadoSacar">Estado</label>
+                                    <input type="text" name="estadoSacar" class="form-control" placeholder="Estado" ng-model="newDireccion.estadoSacar">
+                                    <br>
+                                    <label for="punto_referenciaSacar">Punto de referencia</label>
+                                    <textarea type="text" name="punto_referenciaSacar" ng-model="newDireccion.punto_referenciaSacar" class="form-control" placeholder="Punto de referencia"></textarea>
+                                    <br>
+                                    <label for="avenidaSacar">Avenida</label>
+                                    <input type="text" name="avenidaSacar" class="form-control" placeholder="Avenida" ng-model="newDireccion.avenidaSacar">
+                                    <br>
+                                    <div class="row">
+                                      <div class="col-md-6">
+                                        <label for="calleSacar">Calle</label>
+                                    <input type="text" name="calleSacar" class="form-control" placeholder="Calle" ng-model="newDireccion.calleSacar">
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="casaSacar">Casa</label>
+                                    <input type="text" name="casaSacar" ng-model="newDireccion.casaSacar" class="form-control" placeholder="Casa">
+                                      </div>
+                                    </div>
+                                  </div>
+                               
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
+                                <button type="button" class="btn btn-success" ng-click="registrarOperacion(equiposReporte, operadorData, newDireccion)">Registrar operacion</button>
+                            </div>
+                        </div>
+    </div>
+</div> 
+
+
 </div>
 
     </div><!--/row -->

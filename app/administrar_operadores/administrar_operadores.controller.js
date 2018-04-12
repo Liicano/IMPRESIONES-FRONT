@@ -9,6 +9,7 @@
   administrar_operadores.$inject = ['$scope', '$rootScope', 'appService', '$http'];
 
   function administrar_operadores($scope, $rootScope, appService, $http) {
+     $rootScope.hideSidebar = true;
   	$scope.operadores = [];
   	//OBTENER USUARIOS
      $http.get("http://localhost:3000/usuarios")
@@ -27,7 +28,7 @@
     //FUNCION PARA OBTENER DATA DE EL OPERADOR EN EL MODAL
     $scope.getData = function(cedula){
       $http.get("http://localhost:3000/usuario/"+cedula)
-    .then(function(response) {
+      .then(function(response) {
        console.log(response.data);
        angular.copy(response.data, $scope.operador);
 
@@ -81,7 +82,9 @@
       $scope.OperadorReportes = [];
       $scope.OperadorNombre = operador.nombre +' '+operador.apellido;
       for (var i = 0; i < operador.reportes.length; i++) {
-          $scope.OperadorReportes.push(operador.reportes[i]);
+          if (operador.reportes[i].fecha_entrada == '') {
+            $scope.OperadorReportes.push(operador.reportes[i]);
+          }
       }
       console.log($scope.OperadorReportes);
 

@@ -6,11 +6,17 @@
 <h4 class="text-warning">Datos personales</h4>
 <hr class="divider">
 
-<form class="form-group">
+
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad" ng-model="cedula">
+    <input id="email" type="text" class="form-control" minlength="6" maxlength="8" name="email" placeholder="Cedula de identidad" ng-model="cedula">
   </div>
+<hr class="divider">
+
+<div class="form-group">
+  <label for="usr">Password</label>
+  <input type="text" class="form-control" id="usr" ng-model="password">
+</div>
 <hr class="divider">
 
 <div class="form-group">
@@ -27,10 +33,10 @@
 <input type="text" class="form-control" id="usr" ng-model="cargo" value="OPERADOR" placeholder="OPERADOR" disabled="true">
 </div>
 
-<button class="btn btn-sm btn-primary btn-block" ng-click="newOperador(nombre, apellido, cargo, cedula, avenida, calle, casa, correo, numero_telefono, punto_referencia)">Registrar Operador</button>
+<button class="btn btn-sm btn-primary btn-block" ng-click="newOperador(nombre, apellido, password, cargo, cedula, avenida, calle, casa, correo, numero_telefono, punto_referencia)">Registrar Operador</button>
 <hr class="divider">
 
-</form>
+
 
 </div>
 </div>

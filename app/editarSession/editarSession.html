@@ -1,0 +1,79 @@
+<section class="wrapper">
+    <div class="row mt">
+<!--REGISTRO-->
+<div class="col-lg-6 col-md-6 col-sm-12">
+<div class="showback">
+<h4 class="text-warning">Datos personales</h4>
+<hr class="divider">
+
+
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+    <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad" ng-model="mi_cedula">
+  </div>
+<hr class="divider">
+
+<div class="form-group">
+  <label for="usr">Password</label>
+  <input type="text" class="form-control" id="usr" ng-model="mi_password">
+</div>
+<hr class="divider">
+
+<div class="form-group">
+  <label for="usr">Nombre</label>
+  <input type="text" class="form-control" id="usr" ng-model="mi_nombre">
+</div>
+
+<div class="form-group"> 
+  <label for="pwd">Apellido</label>
+  <input type="text" class="form-control" id="pwd" ng-model="mi_apellido">
+</div>
+
+<button class="btn btn-sm btn-primary btn-block" ng-click="editSession(mi_cedula, mi_nombre, mi_apellido, mi_password, mi_correo, mi_telefono)">Guardar Cambios</button>
+<hr class="divider">
+
+
+
+</div>
+</div>
+
+<!--UBICACION-->
+<div class="col-lg-6 col-md-6 col-sm-12">
+<div class="showback">
+<h4 class="text-warning">Contactos</h4>
+
+<hr class="divider">
+
+<strong class="text-center">Mis datos de contacto</strong>
+<hr class="divider">
+<div class="row">
+<div class="col-md-6">
+<div class="form-group">
+  <label for="usr">Correo</label>
+  <input type="text" class="form-control" id="usr" ng-model="mi_correo">
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group">
+<label for="usr">Telefono</label>
+<input type="text" class="form-control" id="usr" ng-model="mi_telefono">
+</div>
+</div>
+
+
+</div>
+  </div>
+  
+</div>
+
+<hr class="divider">
+
+
+</div>
+</div>
+
+    </div>
+</section>
+
+
+

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,11 +20,6 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -31,22 +28,22 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
 
-	  <div id="login-page">
+	  <div id="login-page container" style="margin-left: -25%;">
 	  	<div class="container">
 	  	
-		      <form class="form-login" action="index.html">
+		      <form class="form-login">
 		        <h2 class="form-login-heading">ingresa</h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" placeholder="Cedula de identidad" autofocus>
+		            <input type="text" class="form-control" placeholder="Cedula de identidad" autofocus ng-model="cedula">
 		            <br>
-		            <input type="password" class="form-control" placeholder="Contraseña">
+		            <input type="password" class="form-control" placeholder="Contraseña" ng-model="password">
 		            <label class="checkbox">
 		                <span class="pull-right">
 		                    <a data-toggle="modal" href="login.html#myModal"> ¿Olvidaste tu contraseña?</a>
 		
 		                </span>
 		            </label>
-		            <button class="btn btn-theme btn-block" href="index.html" type="submit"><i class="fa fa-enter"></i> INGRESAR</button>
+		            <button class="btn btn-theme btn-block" type="submit" ng-click="login(cedula, password)"><i class="fa fa-enter"></i> INGRESAR</button>
 		            <hr>
 		            
 		           
@@ -66,12 +63,12 @@
 		                      </div>
 		                      <div class="modal-body">
 		                          <p>Ingresa tu correo electronico y te enviaremos un email de validacion.</p>
-		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix" ng-model="email">
 		
 		                      </div>
 		                      <div class="modal-footer">
 		                          <button data-dismiss="modal" class="btn btn-default" type="button">Salir</button>
-		                          <button class="btn btn-success" type="button">Enviar</button>
+		                          <button class="btn btn-success" type="button" ng-click="enviarEmail(email)">Enviar</button>
 		                      </div>
 		                  </div>
 		              </div>

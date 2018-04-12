@@ -12,6 +12,11 @@
     <input id="email" type="text" class="form-control" name="email" placeholder="Cedula de identidad" ng-model="cedula">
   </div>
 <hr class="divider">
+<div class="form-group">
+  <label for="usr">Password</label>
+  <input type="text" class="form-control" id="usr" ng-model="password">
+</div>
+<hr class="divider">
 
 <div class="form-group">
   <label for="usr">Nombre</label>
@@ -27,7 +32,7 @@
 <input type="text" class="form-control" id="usr" ng-model="cargo" value="ENCARGADO" placeholder="ENCARGADO" disabled="true">
 </div>
 
-<button class="btn btn-sm btn-primary btn-block" ng-click="newEncargado(nombre, apellido, cargo, cedula, avenida, calle, casa, correo, numero_telefono, punto_referencia)">Registrar Operador</button>
+<button class="btn btn-sm btn-primary btn-block" ng-click="newEncargado(nombre, password, apellido, cargo, cedula, avenida, calle, casa, correo, numero_telefono, punto_referencia)">Registrar Encargado</button>
 <hr class="divider">
 
 </form>

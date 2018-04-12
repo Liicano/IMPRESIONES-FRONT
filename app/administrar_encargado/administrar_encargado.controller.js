@@ -9,7 +9,8 @@
   administrar_encargado.$inject = ['$scope', '$rootScope', 'appService', '$http'];
 
   function administrar_encargado($scope, $rootScope, appService, $http) {
-      
+       $rootScope.hideSidebar = true;
+       
       $scope.encargados = [];
     //OBTENER USUARIOS
      $http.get("http://localhost:3000/usuarios")

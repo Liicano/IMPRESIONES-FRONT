@@ -3,14 +3,14 @@
   'use strict';
 
   angular
-    .module('app', ['ui.router'])
+    .module('app', ['ui.router', 'ngCookies'])
     .controller('MainController', mainController)
     .config(config);
 
   mainController.$inject = ['$scope', '$rootScope', '$location', 'appService'];
 
   function mainController($scope, $rootScope, $location, appService) {
-   console.log("MAIN CONTROLLER");
+
   }
 
   config.$inject = [
@@ -46,15 +46,10 @@
         controller: 'nuevo_encargado',
         templateUrl: 'app/nuevo_encargado/nuevo_encargado.html'
       })
-      .state('buttons', {
-        url: '/buttons',
-        controller: 'ButtonsController',
-        templateUrl: 'app/buttons/buttons.html'
-      })
-      .state('chartjs', {
-        url: '/chartjs',
-        controller: 'ChartjsController',
-        templateUrl: 'app/chartjs/chartjs.html'
+      .state('reporte_operadores', {
+        url: '/reporte_operadores',
+        controller: 'reporte_operadores',
+        templateUrl: 'app/reporte_operadores/reporte_operadores.html'
       })
       .state('administrar_encargado', {
         url: '/administrar_encargado',
@@ -71,16 +66,6 @@
         controller: 'nuevoEquipo',
         templateUrl: 'app/nuevoEquipo/nuevoEquipo.html'
       })
-      .state('morris', {
-        url: '/morris',
-        controller: 'MorrisController',
-        templateUrl: 'app/morris/morris.html'
-      })
-      .state('panels', {
-        url: '/panels',
-        controller: 'PanelsController',
-        templateUrl: 'app/panels/panels.html'
-      })
       .state('responsive_table', {
         url: '/responsive_table',
         controller: 'ResponsiveTableController',
@@ -91,10 +76,15 @@
         controller: 'nuevoOperador',
         templateUrl: 'app/nuevoOperador/nuevoOperador.html'
       })
-      .state('profile', {
-        url: '/profile',
-        controller: 'ProfileController',
-        templateUrl: 'app/profile/profile.html'
+      .state('reporte_equipos', {
+        url: '/reporte_equipos',
+        controller: 'reporte_equipos',
+        templateUrl: 'app/reporte_equipos/reporte_equipos.html'
+      })
+      .state('editarSession', {
+        url: '/editarSession',
+        controller: 'editarSession',
+        templateUrl: 'app/editarSession/editarSession.html'
       });
 
     // $urlRouterProvider.otherwise('/');
@@ -104,6 +94,10 @@
     // Comment out the line below to run the app
     // without HTML5 mode (will use hashes in routes)
     $locationProvider.html5Mode(true);
-  }
+  
+}
+
+
+
 
 })();

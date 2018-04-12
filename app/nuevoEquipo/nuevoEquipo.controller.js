@@ -9,6 +9,7 @@
   nuevoEquipo.$inject = ['$scope', '$rootScope', 'appService', '$window', '$http'];
 
 function nuevoEquipo($scope, $rootScope, appService, $window, $http) {
+$rootScope.hideSidebar = true;
 //FECHA PARA EL REGISTRO
 $scope.Fecha_Hoy = new Date();
 
@@ -44,13 +45,30 @@ $scope.newEquipo = function(codigo, nombre, descripcion, serial_1, serial_2, mod
       }
   }
    
-   //================================================
-   $http.post("http://localhost:3000/equipos", equipo)
+  if (equipo.codigo == undefined || equipo.nombre == undefined || equipo.descripcion == undefined || equipo.serial_1 == undefined || equipo.serial_2 == undefined || equipo.modelo == undefined || equipo.fecha_compra == undefined || equipo.ubicacion.pais == undefined || equipo.ubicacion.estado == undefined || equipo.ubicacion.avenida == undefined || equipo.ubicacion.calle == undefined || equipo.ubicacion.codigo_postal == undefined || equipo.ubicacion.punto_referencia == undefined) {
+    toastr.error('Tiene uno o mas campos en blanco', 'ERROR');
+  }else{
+  //================================================
+    
+     $http.get("http://localhost:3000/equipo/"+equipo.codigo)
     .then(function(response) {
-        toastr.success('Equipo registrado con exito.','Felicidades');
+     if (response.data != null || response.data != undefined) {
+      toastr.error('Este equipo ya se encuentra registrado', '¡ERROR!');
+     }else{
+      $http.post("http://localhost:3000/equipos", equipo)
+       .then(function(response) {
+          toastr.success('Equipo registrado con exito.','Felicidades');
+       });
+
+
+     }
+     
+
     });
+    
+  // ==============================================
 
-
+}
 }
 
 

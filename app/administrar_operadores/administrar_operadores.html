@@ -18,7 +18,7 @@
            
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc" ng-repeat="operador in operadores | filter: BusquedaOp">
                     <!-- WHITE PANEL - TOP USER -->
-                    <div class="white-panel pn">
+                    <div class="white-panel pn" style="margin-top: 4%;">
                         <div class="white-header">
 
                             <button class="pull-right btn btn-sm btn-danger" data-toggle="modal" data-target="#ModalEliminar" style="margin-left: 5px"; ng-click="deleteOperador(operador.cedula)"><span class="glyphicon glyphicon-remove"></span></button>
@@ -157,13 +157,10 @@
                                       <td class="text-info">{{report.codigo}}</td>
                                       <td>{{report.nombre}}</td>
                                       <td>{{report.modelo}}</td>
-                                      <td>{{report.fecha_salida}}</td>
-                                      <span ng-if="report.fecha_entrada != null">
-                                        <td>{{report.fecha_entrada}}</td>
-                                      </span>
-                                      <span ng-if="report.fecha_entrada == null">
+                                      <td>{{report.fecha_salida | date : "dd-MM-y"}}</td>
+                                      <div ng-if="report.fecha_entrada == ''">
                                         <td><span class="label label-danger">Equipo sin devolver</span></td>
-                                      </span>
+                                      </div>
                                     </tr>
                                   </tbody>
                                 </table>

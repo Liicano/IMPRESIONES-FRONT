@@ -9,7 +9,8 @@
   administrar_equipos.$inject = ['$scope', '$rootScope', 'appService', '$http', '$location'];
 
   function administrar_equipos($scope, $rootScope, appService, $http, $location) {
-    
+    $rootScope.hideSidebar = true;
+
     //OBTENER EQUIPOS
     $http.get("http://localhost:3000/equipos")
     .then(function(response) {
