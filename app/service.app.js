@@ -20,10 +20,8 @@ angular.module('app')
                             'cedula':data.data.usuario.cedula, 
                             'nombre':data.data.usuario.nombre, 
                             'apellido':data.data.usuario.apellido, 
-                            'cargo':data.data.usuario.cargo, 
                             'nivel':data.data.usuario.nivel,
-                            'correo':data.data.usuario.correo,
-                            'telefono':data.data.usuario.telefono
+                            'correo':data.data.usuario.correo
                           });
                         
                           if (cedula !='' && password != ''){ 

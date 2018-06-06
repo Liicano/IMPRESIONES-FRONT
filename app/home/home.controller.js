@@ -16,14 +16,11 @@
       $rootScope.hideSidebar = false;
     }
 
-
     $rootScope.hideSidebar = true;
     $rootScope.UserSession = [{
       cedula: $cookies.getObject('usuario').cedula,
       nombre: $cookies.getObject('usuario').nombre,
       apellido: $cookies.getObject('usuario').apellido,
-      cargo: $cookies.getObject('usuario').cargo,
-      telefono: $cookies.getObject('usuario').telefono,
       correo: $cookies.getObject('usuario').correo
     }];
 

@@ -1,230 +1,52 @@
 <section class="wrapper">
-   <h4 class="text-center text-info">Registra una operacion</h4>
-     
+   <h3 class="text-center text-info">Documentos en cola</h3>
+     <hr class="divider">
+    
+
     <div class="row">
-        <hr class="divider">
-
-        <div class="row">
-        <div class="container">
-            <div class="col-sm-6">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
-                 <input id="codigo" type="text"  class="form-control" name="username" placeholder="Codigo del equipo" ng-model="codigo"  required>
-                  <span class="input-group-btn">
-                     <button class="btn btn-secondary" type="button" ng-click="findEquipo(codigo)"><span class="glyphicon glyphicon-search"></span></button>
-                 </span>
-                 </div>
-            </div>
-            <div class="col-sm-6">
-                 <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-                 <input id="codigo" type="text" class="form-control" name="username" placeholder="Cedula del operador" ng-model="operador.cedula" required>
-                   <span class="input-group-btn">
-                     <button class="btn btn-secondary" type="button" ng-click="addOperador(operador.cedula)"><span class="glyphicon glyphicon-search"></span></button>
-                 </span>
-                 </div>
-            </div>
-            </div>
-        </div>
-        <hr class="divider">
-    
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="row">
-                   <div class="container-fluid">
-                   <div class="col-sm-12">
-                    <hr class="divider">
-                            <p class="text-info text-center">
-                                ¡Si el Equipo no se encuentra, ingresar a la pestaña registrar Equipo!
-                            </p>
-                            <hr class="divider">
-                        <table class="table table-condensed table-responsive">
-                            <thead>
-                                <th>Codigo</th>
-                                <th>Nombre</th>
-                                <th>Marca</th>
-                                <th>Seriales</th>
-                                <th>Agregar</th>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td ng-model="equipo.codigo">{{equipoData.codigo}}</td>
-                                    <td ng-model="equipo.nombre">{{equipoData.nombre}}</td>
-                                    <td ng-model="equipo.modelo">{{equipoData.modelo}}</td>
-                                    <td>
-                                    <span class="label label-info label-mini" ng-model="equipo.serial_1">{{equipoData.serial_1}}</span> - <span class="label label-info label-mini" ng-model="equipo.serial_2">{{equipoData.serial_2}}</span>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-success btn-sm" ng-click="addEquipo(codigo)"><span class="glyphicon glyphicon-plus"></span></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                  
-                   </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="container-fluid">
-                            <hr class="divider">
-                            <p class="text-info text-center">
-                                ¡Si el operador no se encuentra, ingresar a la pestaña registrar operador!
-                            </p>
-                            <hr class="divider">
-
-                            <table class="table table-condensed table-responsive">
-                                <thead>
-                                    <tr>
-                                        <th>Cedula</th>
-                                        <th>Nombre</th>
-                                        <th>Apellido</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{operadorData.cedula}}</td>
-                                        <td>{{operadorData.nombre}}</td>
-                                        <td>{{operadorData.apellido}}</td>
-                                        <td class="text-center">
-                                           <span class="glyphicon glyphicon-user text-success">
-                                             
-                                           </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-
-<hr class="divider">
-<div class="row">
-   
-    <div class="col-sm-6">
-    <div class="container-fluid">
-       <div class="panel panel-success">
-           <div class="panel-heading">
-               <p class="pull-left">Productos en operacion para el operador:</p>
-               <p class="pull-right text-warning">{{operadorData.nombre}}   {{operadorData.apellido}}</p>
-               <br>
-           </div>
-           <div class="panel-body">
-            <div class="container-fluid">
-                  <table class="table table-responsive table-condensed table-striped">
-                  <thead>
-                      <tr>
-                          <th>Nombre</th>
-                          <th>Modelo</th>
-                          <th>Seriales</th>
-                          <th>STATUS</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr ng-repeat="equipo in equiposReporte">
-                          <td>{{equipo.nombre}}</td>
-                          <td>{{equipo.modelo}}</td>
-                          <td>
-                          <span class="label label-info label-mini">{{equipo.serial_1}}</span> - <span class="label label-info label-mini">{{equipo.serial_2}}</span>
-                          </td>
-                          <td class="text-center">{{equipo.estado_equipo}}</td>
-
-                      </tr>
-                  </tbody>
-              </table>  
-            </div>
-           </div>
-           <div class="panel-footer">
-               <button class="btn btn-block btn-sm btn-success" data-toggle="modal" data-target="#ModalMover" ng-click="ModalPassData(equiposReporte, operadorData)">Procesar operacion</button>
-           </div>
-       </div>
-       </div>
+          <div class="col-md-6 text-center">
+            <button class="btn btn-success btn-sm">Imprimir toda la cola</button>
+          </div>
+          <div class="col-md-6 text-center">
+            <button class="btn btn-danger btn-sm">Vaciar la cola de impresion</button>
+          </div>
     </div>
-    <div class="col-sm-6">
-    
-     <div class="container-fluid">
-        <div class="panel panel-success">
-          <div class="panel-heading">
-            <p class="text-center">Regresar Pedido</p>
-          </div>
-          <div class="panel-body">
-           
-             <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
-                 <input id="codigoDevolver" type="text"  class="form-control" name="codigo" placeholder="Codigo del equipo" ng-model="codigoDevolver"  required>
-                  <span class="input-group-btn">
-                     <button class="btn btn-success" type="button" ng-click="devolverEquipo(codigoDevolver, operadorData)"><span class="glyphicon glyphicon-arrow-right"></span></button>
-                 </span>
-            </div>
-           
-          </div>
-          <div class="panel-footer">
-            <p class="text-center text-info">Ingresa el codigo de un equipo de la operacion y devuelve el prestamo.</p>
-          </div>
-        </div>
+    <hr class="divider">
 
-
-     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Estado</th>
+            <th>Emisor</th>
+            <th>Maquina Emisora</th>
+            <th>Impresion # </th>
+            <th>Opciones</th>            
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-info">123456</td>
+              <td><b>Minuta de aumento</b></td>
+              <td><b><i>PDF</i></b></td>
+              <td>COLA</td>
+              <td>Hector Gonzalez</td>
+              <td>123-456-789</td>
+              <td>7/10</td>
+              <td>
+                <button class="btn btn-sm btn-primary"><span class="fa fa-arrow-up"></span></button>
+                <button class="btn btn-danger btn-sm"><span class="fa fa-times"></span></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
 
-    <!--Modal MOVER EQUIPO-->
-<div class="modal fade" id="ModalMover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title text-center" id="myModalLabel">Ingresa la ubicacion</h4>
-                            </div>
-                            <div class="modal-body">
-                                  <hr class="divider" >
-                                  <p class="text-center alert alert-info" >Direccion de envio</p>
-                                  <hr class="divider" >
-                                  <div class="form-group" >
-                                    <label for="estadoSacar">Estado</label>
-                                    <input type="text" name="estadoSacar" class="form-control" placeholder="Estado" ng-model="newDireccion.estadoSacar">
-                                    <br>
-                                    <label for="punto_referenciaSacar">Punto de referencia</label>
-                                    <textarea type="text" name="punto_referenciaSacar" ng-model="newDireccion.punto_referenciaSacar" class="form-control" placeholder="Punto de referencia"></textarea>
-                                    <br>
-                                    <label for="avenidaSacar">Avenida</label>
-                                    <input type="text" name="avenidaSacar" class="form-control" placeholder="Avenida" ng-model="newDireccion.avenidaSacar">
-                                    <br>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <label for="calleSacar">Calle</label>
-                                    <input type="text" name="calleSacar" class="form-control" placeholder="Calle" ng-model="newDireccion.calleSacar">
-                                      </div>
-                                      <div class="col-md-6">
-                                        <label for="casaSacar">Casa</label>
-                                    <input type="text" name="casaSacar" ng-model="newDireccion.casaSacar" class="form-control" placeholder="Casa">
-                                      </div>
-                                    </div>
-                                  </div>
-                               
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
-                                <button type="button" class="btn btn-success" ng-click="registrarOperacion(equiposReporte, operadorData, newDireccion)">Registrar operacion</button>
-                            </div>
-                        </div>
-    </div>
-</div> 
 
-
-</div>
 
     </div><!--/row -->
 </section>

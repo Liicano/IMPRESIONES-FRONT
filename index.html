@@ -8,7 +8,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>CHECKRFID</title>
+    <title>DigitalPrint</title>
     
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -34,61 +34,20 @@
      TOP BAR CONTENT & NOTIFICATIONS
      *********************************************************************************************************************************************************** -->
       <!--header start-->
-      <header class="header black-bg" ng-show="hideSidebar">
+      <header class="header black-bg" ng-show="hideSidebar" style="background-color: #388e3c">
         <div class="sidebar-toggle-box">
-          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu desplegable"></div>
+          <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Menu desplegable" style="display: none;"></div>
         </div>
         <!--logo start-->
-        <a href="index.html" class="logo"><b>CHECKRFID</b></a>
-        <!--logo end-->
-        <div class="nav notify-row" id="top_menu">
-          <!--  notification start -->
-          <ul class="nav top-menu">
-            <!-- settings start -->
-            
-            <!-- settings end -->
-            <!-- inbox dropdown start-->
-            <li id="header_inbox_bar" class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle">
-                <i class="fa fa-user"></i>  
-                <span class="badge bg-theme"></span>
-              </a>
-              <ul class="dropdown-menu extended inbox">
-                <div class="notify-arrow notify-arrow-green"></div>
-                <li>
-                  <p class="green">Mis datos</p>
-                </li>
-                <li>
-                  <p><span class="fa fa-user"></span> <b>{{UserSession.nombre}} {{UserSession.apellido}}</b>  -  <span class="label label-warning">{{UserSession.cargo}}</span></p>
-                </li>
-                 <li>
-                  <p><span class="fa fa-phone"></span> <b>  {{UserSession.telefono}}</b></p>
-                </li>
-                <li>
-                  <p><span class="fa fa-envelope"></span> <b>{{UserSession.correo}}</b></p>
-                </li>
-                 <li>
-                  <hr class="divider">
-                </li>
-                  <li>
-                  <div class="container-fluid">
-                    <div class="row">
-                    <div class="col-md-6 offset-1">
-                      <button class="btn btn-danger btn-sm btn-block" ng-click="logout()">Cerrar sesion</button>
-                    </div>
-                     <div class="col-md-6 offset-1">
-                      <button class="btn btn-primary btn-sm btn-block" ui-sref="editarSession">Editar</button>
-                    </div>
-                  </div>
-                  </div>
-                  <hr class="divider">
-                </li>
-               
-              
-            </li>
+        <a href="index.html" class="logo">
+            <img src="assets/img/logotipo.png" style="width: 38%; margin-top: -10.5px; border-radius: 15px; margin-left: -25px;">
 
-            <!-- inbox dropdown end -->
-          </ul>
+
+        </a>
+        <!--logo end-->
+        <div class="nav notify-row pull-right" id="top_menu" align="right">
+          <!--  notification start -->
+         <h5 class="" style="color: white;"><b>ADMINISTRADOR</b></h5>
           <!--  notification end -->
         </div>
        
@@ -101,69 +60,59 @@
       <!--sidebar start-->
       <div>
       <aside ng-show="hideSidebar">
-        <div id="sidebar"  class="nav-collapse">
+        <div id="sidebar"  class="nav-collapse" style="background-color: #5d4037">
           <!-- sidebar menu start-->
-          <ul class="sidebar-menu" id="nav-accordion">
+          <ul class="sidebar-menu" id="nav-accordion" style="background-color: #5d4037">
             <p class="centered"><a href="profile.html"><img src="assets/img/ui-sherman.png" class="img-circle" width="60"></a></p>
             <h5 class="centered">{{UserSession.nombre}} {{UserSession.apellido}}</h5>
-            <p class="centered">{{UserSession.cargo}}</p>
+         
+            <div class="row text-center container-fluid">
+              <div class="col-sm-6">
+                <button class="btn btn-primary btn-sm btn-block">Editar</button>
+              </div>
+              <div class="col-sm-6">
+                <button class="btn btn-sm btn-danger btn-block">Salir</button>
+              </div>
+            </div>
+            <hr class="divider">
+
             <li class="mt">
               <a class="" href="" ui-sref="home">
-                <i class="fa fa-dashboard"></i>
-                <span>INICIO</span>
+                <i class="fa fa-file"></i>
+                <span>COLA DE IMPRESION</span>
               </a>
             </li>
           
           <hr class="divider">
-           <p class="centered text-warning"><b>EQUIPOS</b></p>
+           <p class="centered text-warning"><b>DOCUMENTOS</b></p>
             <hr class="divider">
 
             <li class="sub-menu">
-              <a href="javascript:;" >
-                <i class="fa fa-list-alt"></i>
-                <span>INVENTARIO</span>
-              </a>
-              <ul class="sub">
-                <li><a href="#" ui-sref="nuevoEquipo">NUEVO EQUIPO</a></li>
-                <li><a href="#" ui-sref="administrar_equipos">ADMINISTRAR</a></li>
-              </ul>
-            </li>
-
-              <li class="sub-menu">
               <a href="javascript:;" >
                 <i class="fa fa-list-alt"></i>
                 <span>REPORTES</span>
               </a>
               <ul class="sub">
-                <li><a href="#" ui-sref="reporte_equipos"> <span class="fa fa-flash">  </span>   - EQUIPOS</a></li>
-                <li><a href="#" ui-sref="reporte_operadores"><span class="fa fa-users">  </span>   - OPERADORES</a></li>
+                <li><a href="#" ui-sref="nuevoEquipo">TIPO DE DOCUMENTO</a></li>
+                <li><a href="#" ui-sref="administrar_equipos">NOMBRE</a></li>
               </ul>
             </li>
 
-
+            
             <hr class="divider">
             <p class="centered text-primary"><b>USUARIOS</b></p>
             <hr class="divider">
   
 
-            <li class="sub-menu">
-              <a href="javascript:;" >
-                <i class="fa fa-cogs"></i>
-                <span>OPERADORES</span>
-              </a>
-              <ul class="sub">
-                <li><a href="#" ui-sref="nuevoOperador">NUEVO OPERADOR</a></li>
-                <li><a href="#" ui-sref="administrar_operadores">ADMINISTRAR</a></li>
-              </ul>
-            </li>
+           
             <li class="sub-menu" ng-show="isAdmin">
               <a href="javascript:;" >
                 <i class="fa fa-users"></i>
-                <span>ENCARGADOS</span>
+                <span>USUARIOS</span>
               </a>
               <ul class="sub">
-                <li><a href="#" ui-sref="nuevo_encargado">NUEVO ENCARGADO</a></li>
-                <li><a href="#" ui-sref="administrar_encargado">ADMINISTRAR</a></li>
+                <li><a href="#" ui-sref="nuevo_encargado">NUEVO USUARIO</a></li>
+                <li><a href="#" ui-sref="administrar_encargado">ADMINISTRAR USUARIOS</a></li>
               </ul>
             </li>
           </ul>
