@@ -5,17 +5,17 @@
 
     <div class="row">
           <div class="col-md-6 text-center">
-            <button class="btn btn-success btn-sm">Imprimir toda la cola</button>
+            <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal_imprimir_todos">Imprimir toda la cola</button>
           </div>
           <div class="col-md-6 text-center">  
-            <button class="btn btn-danger btn-sm">Vaciar la cola de impresion</button>
+            <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal_vaciar_cola">Vaciar la cola de impresion</button>
           </div>
     </div>
     <hr class="divider">
 
     <div class="row">
       <div class="col-md-12">
-        <table class="table">
+        <table class="table" id="tabla_prueba">
           <thead>
             <th>Codigo</th>
             <th>Nombre</th>
@@ -41,6 +41,48 @@
                 <button class="btn btn-danger btn-sm"><span class="fa fa-times"></span></button>
               </td>
             </tr>
+             <tr>
+              <td class="text-info">123456</td>
+              <td><b>Minuta de aumento</b></td>
+              <td><b><i>PDF</i></b></td>
+              <td>COLA</td>
+              <td>Hector Gonzalez</td>
+              <td>123-456-789</td>
+              <td>7/10</td>
+              <td>
+                <button class="btn btn-success btn-sm"><span class="fa fa-check"></span></button>
+                <button class="btn btn-sm btn-primary"><span class="fa fa-arrow-up"></span></button>
+                <button class="btn btn-danger btn-sm"><span class="fa fa-times"></span></button>
+              </td>
+            </tr>
+             <tr>
+              <td class="text-info">123456</td>
+              <td><b>Minuta de aumento</b></td>
+              <td><b><i>PDF</i></b></td>
+              <td>COLA</td>
+              <td>Hector Gonzalez</td>
+              <td>123-456-789</td>
+              <td>7/10</td>
+              <td>
+                <button class="btn btn-success btn-sm"><span class="fa fa-check"></span></button>
+                <button class="btn btn-sm btn-primary"><span class="fa fa-arrow-up"></span></button>
+                <button class="btn btn-danger btn-sm"><span class="fa fa-times"></span></button>
+              </td>
+            </tr>
+             <tr>
+              <td class="text-info">4543</td>
+              <td><b>Minuta de renuncia</b></td>
+              <td><b><i>PDF</i></b></td>
+              <td>COLA</td>
+              <td>Hector Gonzalez</td>
+              <td>123-456-789</td>
+              <td class="text-danger">10/10</td>
+              <td>
+                <button class="btn btn-success btn-sm"><span class="fa fa-check"></span></button>
+                <button class="btn btn-sm btn-primary"><span class="fa fa-arrow-up"></span></button>
+                <button class="btn btn-danger btn-sm"><span class="fa fa-times"></span></button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -50,4 +92,55 @@
 
 
     </div><!--/row -->
+
+    <!-- Modal ver reportes -->
+<div class="modal fade" id="modal_imprimir_todos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">¿Estas seguro que deseas imprimir todo?  <span class="pull-right"></span></h4>
+
+                            </div>
+                            <hr class="divider">
+                            <p class="text-center">Confirma tu identidad</p>
+                            <hr class="divider">
+                              <div class="modal-body">
+                              <div class="container-fluid">
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <input type="text" placeholder="Codigo de huella" class="form-control" name="">
+                                  </div>
+                                  <div class="col-md-6">
+                                     <input type="text" placeholder="PIN personal" class="form-control" name="">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                           
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">SI</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+                            </div>  
+                        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-danger" id="modal_vaciar_cola" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">¿Estas seguro que deseas vaciar la cola de impresion?  <span class="pull-right"></span></h4>
+
+                            </div>
+                           
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">SI</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">NO</button>
+                            </div>  
+                        </div>
+    </div>
+</div>
+
+
 </section>

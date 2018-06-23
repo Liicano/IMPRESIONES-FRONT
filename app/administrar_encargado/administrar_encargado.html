@@ -1,50 +1,97 @@
 <section class="wrapper site-min-height">
  <div class="row">
-     <div class="col-md-8">
-        <h3><i class="fa fa-angle-right"></i> ENCARGADOS</h3>
+     <div class="col-md-12">
+        <h3><i class="fa fa-angle-right"></i>USUARIOS - ADMINISTRAR</h3>
      </div>
-     <div class="col-md-4" style="margin-top: 15px;">
-        <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-        <input id="email" type="text" class="form-control" name="email" placeholder="Busqueda">
-        </div>
-     </div>
+    
  </div>
-    <hr>
-    <div class="row mt">
-     
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc" ng-repeat="encargado in encargados">
-            <div class="weather-2 pn" style="border-radius: 15px;">
-                        <div class="weather-2-header">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <p>{{encargado.nombre}} {{encargado.apellido}}</p>
-                                </div>
-                                <div class="col-sm-6 col-xs-6 goright">
-                                    <p class=""><b>CI: </b>{{encargado.cedula}}</p>
-                                </div>
-                            </div>
-                        </div><!-- /weather-2 header -->
-                        <div class="row centered">
-                            <img src="assets/img/ui-zac.jpg" class="img-circle" width="120">
-                        </div>
-                        <div class="row data">
-                            <div class="col-sm-6 col-xs-6 goleft">
-                                <h4><b>{{encargado.cargo}}</b></h4>
-                                <h6>{{encargado.correo}}</h6>
-                                <h6>{{encargado.telefono}}</h6>
-                            </div>
-                            <div class="col-sm-6 col-xs-6 goright">
-                                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalEdit" ng-click="getData(encargado.cedula)"><i class="glyphicon glyphicon-edit  warning"></i></button><br><br>
-                                <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#ModalEliminar" ng-click="deleteEncargado(encargado.cedula)"><i class="glyphicon glyphicon-remove  danger"></i></button>
-                            </div>
-                        </div>
-                    </div>
+    <hr class="divider">
+      <div class="row">
+        <div class="col-sm-4">
+          <input type="text" class="form-control" placeholder="Dar mismo valor a todos" name="">
         </div>
-           
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4"></div>
+      </div>
+    <hr class="divider">
+    <br>
+    <div class="row mt">
+          
+    <div class="container">
+      <table class="table table-bordered table-condensed table-hover" id="reporte_tipo_documento">
+   <thead>
+     <tr>
+       <th>ID de maquina</th>
+       <th>Cedula de identidad</th>
+       <th>Nombre</th>
+       <th>Apellido</th>
+       <th>Nivel</th>
+       <th>Numero de paginas diarias</th>
+       <th>Habilitar/Deshabilitar</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>123-456-789</td>
+       <td>26185824</td>
+       <td>Hector</td>
+       <td>Gonzalez</td>
+       <td>
+         <select class="form-control">
+           <option>Usuario</option>
+           <option>Jefe</option>
+           <option>Administrador</option>
+         </select>
+       </td>
+       <td>
+         <div class="row">
+           <div class="col-md-6">
+             <input type="text" class="form-control" placeholder="#" name="">
+           </div>
+           <div class="col-md-6">
+             <button class="btn btn-sm btn-success btn-block"><span class="fa fa-check"></span></button>
+           </div>
+         </div>
+       </td>
+       <td>
+         <button class="btn btn-sm btn-warning btn-block">Habilitar</button>
+       </td>
+     </tr>
+
+      <tr>
+       <td>123-456-789</td>
+       <td>26185824</td>
+       <td>Hector</td>
+       <td>Gonzalez</td>
+        <td>
+         <select class="form-control">
+           <option>Usuario</option>
+           <option>Jefe</option>
+           <option>Administrador</option>
+         </select>
+       </td>
+       <td>
+         <div class="row">
+           <div class="col-md-6">
+             <input type="text" class="form-control" placeholder="#" name="">
+           </div>
+           <div class="col-md-6">
+             <button class="btn btn-sm btn-success btn-block"><span class="fa fa-check"></span></button>
+           </div>
+         </div>
+       </td>
+       <td>
+         <button class="btn btn-sm btn-danger btn-block">Deshabilitar</button>
+       </td>
+     </tr>
+      
+       
+   </tbody>
+ </table>
+ <hr class="divider">
+    </div>
+          
     </div><!-- /row -->
-
-
 
 
 <!--MOdal EDITAR-->
@@ -53,7 +100,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Editar ENCARGADO</h4>
+                                <h4 class="modal-title" id="myModalLabel">Editar OPERADOR</h4>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
@@ -112,16 +159,17 @@
                 </div>
 
 
+
 <!--Modal ELIMINAR-->
 <div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Eliminar Encrgado</h4>
+                                <h4 class="modal-title" id="myModalLabel">Eliminar Operador</h4>
                             </div>
                             <div class="modal-body">
-                                ¿Esta seguro que desea eliminar este Encargado?
+                                ¿Esta seguro que desea eliminar este operador?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
@@ -130,6 +178,45 @@
                         </div>
     </div>
 </div>
+
+<!-- Modal ver reportes -->
+<div class="modal fade" id="ModalReportes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">Reportes del operador  <span class="pull-right"> {{OperadorNombre}} </span></h4>
+
+                            </div>
+                            <div class="modal-body">
+                                <hr class="divider">
+                                <table class="table table-condensed table-hover">
+                                  <thead>
+                                    <th>Codigo</th>
+                                    <th>Nombre</th>
+                                    <th>Modelo</th>
+                                    <th>Fecha de salida</th>
+                                    <!-- <th>Fecha de entrada</th> -->
+                                  </thead>
+                                  <tbody>
+                                    <tr ng-repeat="report in OperadorReportes">
+                                      <td class="text-info">{{report.codigo}}</td>
+                                      <td>{{report.nombre}}</td>
+                                      <td>{{report.modelo}}</td>
+                                      <td>{{report.fecha_salida | date : "dd-MM-y"}}</td>
+                                      <div ng-if="report.fecha_entrada == ''">
+                                        <td><span class="label label-danger">Equipo sin devolver</span></td>
+                                      </div>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-dismiss="modal">SALIR</button>
+                            </div>  
+                        </div>
+    </div>
+</div>
+
 
 
 

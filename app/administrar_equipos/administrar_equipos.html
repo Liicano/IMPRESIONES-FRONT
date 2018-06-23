@@ -1,277 +1,133 @@
 <section class="wrapper">
-    <h3><i class="fa fa-angle-right"></i> Equipos en el inventario</h3>
-    
     <div class="row mt">
-        <div class="col-md-12">
-            <div class="content-panel">
-                <table class="table table-striped table-advance table-hover">
-                    <div class="row">
-                      <div class="col-md-8">
-                         <h4><i class="fa fa-angle-right"></i> Equipos</h4>
-                      </div>
-                      <div class="col-md-4">
-                        <div class="container-fluid">
-                          <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-        <input id="email" type="text" class="form-control" name="busqueda" placeholder="Busqueda" ng-model="BusquedaEquipos">
-        </div>
-
-                        </div>
-                      </div>
-                    </div>
-                   
-                  
-                    <hr>
-                    <thead>
-                    <tr>
-                        <th><i class="fa fa-barcode"></i><span>   CODIGO</span></th>
-                        <th class="hidden-phone"><i class="fa fa-question-circle"></i> NOMBRE</th>
-                        <th><i class="fa fa-bookmark"></i> DESCRIPCION</th>
-                        <th><i class="fa fa-bookmark"></i> MODELO</th>
-                        <th><i class="fa fa-bookmark"></i> FECHA DE COMPRA</th>
-                        <th><i class=" fa fa-edit"></i> SERIALES</th>
-                         <th><i class=" fa fa-arrow-up"></i> EQUIPO - PRESTAMO</th>
-                        <th><i class=" fa fa-bookmark"></i> UBICACION</th>
-                        <th>ACCION</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr ng-repeat="equipo in equipos | filter:BusquedaEquipos">
-                        <td><a>{{equipo.codigo}}</a></td>
-                        <td class="hidden-phone">{{equipo.nombre}}</td>
-                        <td>{{equipo.descripcion}}</td>
-                        <td>{{equipo.modelo}}</td>
-                        <td>{{equipo.fecha_compra | date : "dd-MM-y"}}</td>
-                        <td><span class="label label-info label-mini">{{equipo.serial_1}}</span> - <span class="label label-info label-mini">{{equipo.serial_2}}</span></td>
-
-
-                        <td>
-                        <span ng-if="equipo.estado_equipo == 'DISPONIBLE'">
-                        <span class="label label-success label-mini">{{equipo.estado_equipo}}</span>
-                        </span>
-
-                        <span ng-if="equipo.estado_equipo == 'MANTENIMIENTO'">
-                        <span class="label label-warning label-mini">{{equipo.estado_equipo}}</span>
-                        </span>
-
-                        <span ng-if="equipo.estado_equipo == 'FUERA DE SERVICIO'">
-                        <span class="label label-danger label-mini">{{equipo.estado_equipo}}</span>
-                        </span>
-
-
-
-                         -  
-                        <span ng-if="equipo.prestamo == 'SI'">
-                        <span class="label label-danger label-mini">{{equipo.prestamo}}</span> 
-                        </span>
-
-                        <span ng-if="equipo.prestamo == 'NO'">
-                        <span class="label label-success label-mini">{{equipo.prestamo}}</span> 
-                        </span>
-                        </td>
-                       
-
-                         <td><span class="label label-warning">{{equipo.ubicacion['0'].estado}} - {{equipo.ubicacion['0'].avenida}} - {{equipo.ubicacion['0'].calle}}</span></td>
-                        <td>
-                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" ng-click="getData(equipo.codigo)"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#ModalEliminar" ng-click="delete(equipo.codigo)"><i class="fa fa-trash-o "></i></button>
-                        </td>
-                    </tr>
-
-                      
-                    
-
-                    </tbody>
-                </table>
-            </div><!-- /content-panel -->
-        </div><!-- /col-md-12 -->
-    </div><!-- /row -->
-
-<!--MOdal EDITAR-->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="row">
-                                <div class="col-md-6">
-                                  <h4 class="modal-title" id="myModalLabel">Editar equipo</h4>
-                                </div>
-                                  <div class="col-md-6">
-                                    <div class="form-group">
-                                      <select class="form-control" ng-model="estado_equipo">
-                                        <option value="DISPONIBLE" class="text-success">DISPONIBLE</option>
-                                        <option value="MANTENIMIENTO" class="text-warning">MANTENIMIENTO</option>
-                                        <option value="FUERA DE SERVICIO" class="text-danger">FUERA DE SERVICIO</option>
-                                      </select>  
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                            </div>
-                            <div class="modal-body">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <form class="form-group">
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
-    <input id="email" type="text" class="form-control" name="email" placeholder="Codigo" ng-model="Modalcodigo">
-  </div>
+<!--REGISTRO-->
+<div class="col-lg-12 col-md-12 col-sm-12">
+<div class="showback">
+<h4 class="text-warning">REPORTES - NOMBRE DE DOCUMENTO</h4>
 <hr class="divider">
 
-<div class="form-group">
-  <label for="usr">Nombre</label>
-  <input type="text" class="form-control" id="usr" ng-model="Modalnombre">
-</div>
-<div class="form-group"> 
-  <label for="pwd">Descripcion</label>
-  <textarea type="text" class="form-control" id="pwd" ng-model="Modaldescripcion"></textarea>
-</div>
+<div class="container">
 <div class="row">
-    <div class="col-md-6">
-<div class="form-group">
-  <label for="usr">Serial 1</label>
-  <input type="text" class="form-control" id="usr" ng-model="Modalserial_1">
+  <div class="col-md-4">
+     <center>
+    <input type="text" class="form-control" name="" placeholder="Ingrese el nombre del documento">
+    </center>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
 </div>
+</div>
+<hr class="divider">
+
+ <table class="table table-bordered table-condensed table-hover" id="reporte_nombre_documento">
+   <thead>
+     <tr>
+       <th>Codigo</th>
+       <th>Nombre</th>
+       <th>Fecha de envio</th>
+       <th>Tipo de documento</th>
+       <th>Estado</th>
+       <th>Cola</th>
+       <th>Usario Emisor</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-success">SI</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+   </tbody>
+ </table>
+
+
+</div>
+</div>
+
+
+
     </div>
-    <div class="col-md-6">
-        <div class="form-group">
-        <label for="usr">Serial 2</label>
-         <input type="text" class="form-control" id="usr" ng-model="Modalserial_2">
-</div>
-    </div>
-</div>
- <div class="form-group">
-  <label for="usr">Modelo</label>
-  <input type="text" class="form-control" id="usr" ng-model="Modalmodelo">
-</div>
-<div class="form-group">
-  <label for="usr">Fecha de compra</label>
-  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}' ng-model="Modalfecha_compra">
-</div>
+</section>
 
 
 
-</form>
-                                    </div>
 
-<div class="col-md-6">
-<div class="form-group">
-  <label for="usr">Pais</label>
-  <input type="text" class="form-control" ng-model="Modalpais">
-</div>
+<!--
+  
+            <div class="showback">
+                <h4><i class="fa fa-angle-right"></i> Modal Example</h4>
+               
+                <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                    Launch Modal
+                </button>
 
-<div class="form-group">
-  <label for="usr">Estado</label>
-  <input type="text" class="form-control" ng-model="Modalestado">
-</div>
-
-<div class="form-group">
-  <label for="usr">Avenida</label>
-  <input type="text" class="form-control" ng-model="Modalavenida">
-</div>
-
-<div class="form-group">
-  <label for="usr">Calle</label>
-  <input type="text" class="form-control" ng-model="Modalcalle">
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-  <div class="form-group">
-  <label for="usr">Codigo postal</label>
-  <input type="text" class="form-control" ng-model="Modalcodigo_postal">
-</div>
-    </div>
-    <div class="col-md-6">
-     <div class="form-group">
-        <label for="usr">Punto de referencia</label>
-        <textarea name="" id="" cols="30" rows="5" class="form-control" ng-model="Modalpunto_referencia"></textarea>
-        </div>
-    </div>
-</div>
-</div>
-
-                                </div>
+               
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                            </div>
+                            <div class="modal-body">
+                                Hi there, I am a Modal Example for Dashgum Admin Panel.
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-success" ng-click="putChanges()">Guardar cambios</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+-->
 
-
-<!--Modal ELIMINAR-->
-<div class="modal fade" id="ModalEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title" id="myModalLabel">Eliminar equipo</h4>
-                            </div>
-                            <div class="modal-body">
-                                ¿Esta seguro que desea eliminar este equipo?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
-                                <button type="button" class="btn btn-danger" ng-click="deleteEquipo(equipo.codigo)">SI</button>
-                            </div>
-                        </div>
-    </div>
-</div>
-          
-
-
-
-<!--Modal MOVER EQUIPO-->
-<div class="modal fade" id="ModalMover" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                <h4 class="modal-title text-center" id="myModalLabel">Mover - Retornar</h4>
-                            </div>
-                            <div class="modal-body">
-                                <select class="form-control"ng-model="TipoPeticion" ng-change="Peticion(TipoPeticion)" >
-                                  <option class="form-control" value="" disabled="">Tipo de peticion</option>
-                                  <option class="form-control" value="0">SACAR</option>
-                                  <option class="form-control" value="1" ng-model="TipoPeticion">RETORNAR</option>
-                                 </select>
-                                  <hr class="divider" ng-show="sacarUbicacion">
-                                  <p class="text-center alert alert-info" ng-show="sacarUbicacion" >Direccion de envio</p>
-                                  <hr class="divider" ng-show="sacarUbicacion">
-                                  <div class="form-group" ng-show="sacarUbicacion">
-                                    <label for="estadoSacar">Estado</label>
-                                    <input type="text" name="estadoSacar" class="form-control" placeholder="Estado" ng-model="estadoSacar">
-                                    <br>
-                                    <label for="punto_referenciaSacar">Punto de referencia</label>
-                                    <textarea type="text" name="punto_referenciaSacar" ng-model="punto_referenciaSacar" class="form-control" placeholder="Punto de referencia"></textarea>
-                                    <br>
-                                    <label for="avenidaSacar">Avenida</label>
-                                    <input type="text" name="avenidaSacar" class="form-control" placeholder="Avenida" ng-model="avenidaSacar">
-                                    <br>
-                                    <div class="row">
-                                      <div class="col-md-6">
-                                        <label for="calleSacar">Calle</label>
-                                    <input type="text" name="calleSacar" class="form-control" placeholder="Calle" ng-model="calleSacar">
-                                      </div>
-                                      <div class="col-md-6">
-                                        <label for="casaSacar">Casa</label>
-                                    <input type="text" name="casaSacar" ng-model="casaSacar" class="form-control" placeholder="Casa">
-                                      </div>
-                                    </div>
-                                  </div>
-                               
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">CANCELAR</button>
-                                <button type="button" class="btn btn-success" ng-click="sacarEquipo(estadoSacar, avenidaSacar, calleSacar, punto_referenciaSacar)">Guardar cambios</button>
-                            </div>
-                        </div>
-    </div>
-</div> 
-
-
-
-</section>

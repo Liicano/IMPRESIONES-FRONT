@@ -1,108 +1,106 @@
 <section class="wrapper">
     <div class="row mt">
 <!--REGISTRO-->
-<div class="col-lg-6 col-md-6 col-sm-12">
+<div class="col-lg-12 col-md-12 col-sm-12">
 <div class="showback">
-<h4 class="text-warning">Registro</h4>
+<h4 class="text-warning">REPORTES - TIPO DE DOCUMENTO</h4>
 <hr class="divider">
 
-
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
-    <input id="codigo" type="text" class="form-control" name="username" placeholder="Codigo" ng-model="codigo" required>
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+     <center>
+    <div class="input-group">
+    <span class="input-group-addon" id="basic-addon3">Seleccione el tipo de publicacion: </span>
+      <select class="form-control">
+        <option value="pdf" selected="">PDF</option>
+        <option value="excel" selected="">EXCEL</option>
+        <option value="word" selected="">WORD</option>
+      </select>
+    </div>
+    </center>
   </div>
+  <div class="col-md-3"></div>
+  <div class="col-md-3"></div>
+</div>
+</div>
 <hr class="divider">
 
-<div class="form-group">
-  <label for="usr">Nombre</label>
-  <input type="text" class="form-control" id="usr" ng-model="nombre" required>
-</div>
-<div class="form-group"> 
-  <label for="pwd">Descripcion</label>
-  <textarea type="text" class="form-control" id="pwd" ng-model="descripcion" required></textarea>
-</div>
-<div class="row">
-    <div class="col-md-6">
-<div class="form-group">
-  <label for="usr">Serial 1</label>
-  <input type="text" class="form-control" id="usr" ng-model="serial_1" required>
-</div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-        <label for="usr">Serial 2</label>
-         <input type="text" class="form-control" id="usr" ng-model="serial_2" required>
-</div>
-    </div>
-</div>
- <div class="form-group">
-  <label for="usr">Modelo</label>
-  <input type="text" class="form-control" id="usr" ng-model="modelo" required>
-</div>
-<div class="form-group">
-  <label for="usr">Fecha de compra</label>
-  <input type="text" class="form-control" id="usr" disabled="true" value='{{Fecha_Hoy | date : "dd-MM-y"}}' required>
-</div>
-
-<button class="btn btn-sm btn-success btn-block" ng-click="newEquipo(codigo, nombre, descripcion, serial_1, serial_2, modelo, fecha_compra, pais, estado, avenida, calle, codigo_postal, punto_referencia)">Guardar Equipo</button>
-
-
-
-
-</div>
-</div>
-
-<!--UBICACION-->
-<div class="col-lg-6 col-md-6 col-sm-12">
-<div class="showback">
-<button class="btn btn-sm btn-primary pull-right" ng-click="valoresDefecto()">Ubicacion por defecto</button>
-<h4 class="text-warning">Ubicacion</h4>
-
-<hr class="divider">
-
-
-<div class="form-group">
-  <label for="usr">Pais</label>
-  <input type="text" class="form-control" id="" {{attr}}  value='{{pais}}' ng-model="pais" required>
-</div>
-
-<div class="form-group">
-  <label for="usr">Estado</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{estado}}' ng-model="estado" required>
-</div>
-
-<div class="form-group">
-  <label for="usr">Avenida</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{avenida}}' ng-model="avenida" required>
-</div>
-
-<div class="form-group">
-  <label for="usr">Calle</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{calle}}' ng-model="calle" required>
-</div>
-
-<div class="row">
-    <div class="col-md-6">
-  <div class="form-group">
-  <label for="usr">Codigo postal</label>
-  <input type="text" class="form-control" id="" {{attr}} value='{{codigopostal}}' ng-model="codigo_postal" required>
-</div>
-    </div>  
-    <div class="col-md-6">
-     <div class="form-group">
-        <label for="usr">Punto de referencia</label>
-        <textarea name="" id="" cols="30" rows="5" class="form-control" {{attr}}="true" value='{{puntoreferencia}}' ng-model="punto_referencia" required></textarea>
-        </div>
-    </div>
-</div>
-
-<hr class="divider">
-
-
+ <table class="table table-bordered table-condensed table-hover" id="reporte_tipo_documento">
+   <thead>
+     <tr>
+       <th>Codigo</th>
+       <th>Nombre</th>
+       <th>Fecha de envio</th>
+       <th>Tipo de documento</th>
+       <th>Estado</th>
+       <th>Cola</th>
+       <th>Usario Emisor</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-danger">NO</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+        <tr>
+       <td>1233456789</td>
+       <td>Minuta de prueba</td>
+       <td>12/12/2018</td>
+       <td>PDF</td>
+       <td>APROBADO</td>
+       <td class="text-success">SI</td>
+       <td>Hector Gonzalez</td>
+     </tr>
+   </tbody>
+ </table>
 
 
 </div>
 </div>
+
+
 
     </div>
 </section>

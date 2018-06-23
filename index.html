@@ -24,11 +24,15 @@
     <link rel="stylesheet" href="node_modules/toastr/build/toastr.min.css">
     <script src="assets/js/pdfmake/pdfmake.min.js"></script>
     <script src="assets/js/pdfmake/vfs_fonts.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/angular-datatables.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.datatables.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.datatables.buttons.css">
    
   </head>
 
   <body ng-controller="MainController">
-  <section id="container" >
+  <section id="container" class="contenedor-pagina">
 
       <!-- **********************************************************************************************************************************************************
      TOP BAR CONTENT & NOTIFICATIONS
@@ -68,10 +72,10 @@
          
             <div class="row text-center container-fluid">
               <div class="col-sm-6">
-                <button class="btn btn-primary btn-sm btn-block">Editar</button>
+                <button class="btn btn-primary btn-sm btn-block" ui-sref="editarSession">Editar</button>
               </div>
               <div class="col-sm-6">
-                <button class="btn btn-sm btn-danger btn-block">Salir</button>
+                <button class="btn btn-sm btn-danger btn-block" ng-click="logout()">Salir</button>
               </div>
             </div>
             <hr class="divider">
@@ -105,13 +109,12 @@
   
 
            
-            <li class="sub-menu" ng-show="isAdmin">
+            <li class="sub-menu">
               <a href="javascript:;" >
                 <i class="fa fa-users"></i>
                 <span>USUARIOS</span>
               </a>
               <ul class="sub">
-                <li><a href="#" ui-sref="nuevo_encargado">NUEVO USUARIO</a></li>
                 <li><a href="#" ui-sref="administrar_encargado">ADMINISTRAR USUARIOS</a></li>
               </ul>
             </li>
@@ -133,10 +136,31 @@
   </section>
 
 
+<script src="assets/js/jquery-1.8.3.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="assets/js/jquery.scrollTo.min.js"></script>
+  <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
+  <script src="assets/js/jquery.sparkline.js"></script>
+  <script src="assets/js/jquery.datatables.js"></script>
+  <script type="text/javascript" src="assets/js/datatables.buttons.js"></script>
+  <script type="text/javascript" src="assets/js/datatables.buttons.flash.js"></script>
+  <script type="text/javascript" src="assets/js/datatables.buttons.jzip.js"></script>
+  <script type="text/javascript" src="assets/js/datatables.buttons.pdf.js"></script>
+  <script type="text/javascript" src="assets/js/datatables.buttons.vsfonts.js"></script>
+  <script type="text/javascript" src="assets/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="assets/js/buttons.print.min.js"></script>
+
+
+
+
 
   <script type="text/javascript" src="node_modules/angular/angular.js"></script>
   <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
+  <!-- <script type="text/javascript" src="assets/js/angular-datatables.min.js"></script>
+  <script type="text/javascript" src="assets/js/angular-datatables.buttons.min.js"></script> -->
+  <script src="assets/js/angular-validate.min.js"></script>
   
   <script type="text/javascript" src="app/app.js"></script>
   <script type="text/javascript" src="app/app.run.js"></script>
@@ -158,14 +182,7 @@
 
   <!--THEME-->
   <!-- js placed at the end of the document so the pages load faster -->
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/jquery-1.8.3.min.js"></script>
-  <script src="assets/js/bootstrap.min.js"></script>
-  <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-  <script src="assets/js/jquery.scrollTo.min.js"></script>
-  <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-  <script src="assets/js/jquery.sparkline.js"></script>
-  <script src="assets/js/angular-validate.min.js"></script>
+  
  
 
 
@@ -182,6 +199,12 @@
 <!--Toastr-->
 <script type="text/javascript" src="node_modules/toastr/build/toastr.min.js"></script>
 <script src="assets/js/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+  if(window.location.pathname == '/'){
+    $('#contenedor-pagina').css('background-image: url('assets/img/login-bg.jpg');');
+  }
+</script>
 
 
   <script type="text/javascript">
